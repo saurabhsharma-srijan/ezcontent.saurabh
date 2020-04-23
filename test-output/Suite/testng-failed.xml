@@ -10,13 +10,6 @@
           <include name="setup"/>
         </methods>
       </class> <!-- ezcontent.qa.testcases.LoginPageTest -->
-      <class name="ezcontent.qa.testcases.ForgetPasswordPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="closeBrowser"/>
-          <include name="statusMessageTest"/>
-        </methods>
-      </class> <!-- ezcontent.qa.testcases.ForgetPasswordPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

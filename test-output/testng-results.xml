@@ -1,37 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-23T12:32:38 IST" name="Default suite" finished-at="2020-04-23T12:33:05 IST" duration-ms="27405">
+  <suite started-at="2020-04-23T17:02:18 IST" name="Default suite" finished-at="2020-04-23T17:03:22 IST" duration-ms="63731">
     <groups>
     </groups>
-    <test started-at="2020-04-23T12:32:38 IST" name="Default test" finished-at="2020-04-23T12:33:05 IST" duration-ms="27405">
-      <class name="ezcontent.qa.testcases.ForgetPasswordPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:32:38 IST" name="setup" finished-at="2020-04-23T12:32:55 IST" duration-ms="16806" status="PASS">
+    <test started-at="2020-04-23T17:02:18 IST" name="Default test" finished-at="2020-04-23T17:03:22 IST" duration-ms="63731">
+      <class name="ezcontent.qa.testcases.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:02:18 IST" name="setup" finished-at="2020-04-23T17:02:52 IST" duration-ms="33950" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="forgetPaswdTitleTest()[pri:1, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:32:55 IST" name="forgetPaswdTitleTest" finished-at="2020-04-23T12:32:55 IST" duration-ms="34" status="PASS">
+        <test-method signature="loginPageTitleTest()[pri:1, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:02:52 IST" name="loginPageTitleTest" finished-at="2020-04-23T17:02:52 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgetPaswdTitleTest -->
-        <test-method signature="logoImageTest()[pri:2, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:32:55 IST" name="logoImageTest" finished-at="2020-04-23T12:32:55 IST" duration-ms="97" status="PASS">
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method signature="logoImageTest()[pri:2, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:02:52 IST" name="logoImageTest" finished-at="2020-04-23T17:02:53 IST" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoImageTest -->
-        <test-method signature="forgetPaswdSubmitTest()[pri:3, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:32:55 IST" name="forgetPaswdSubmitTest" finished-at="2020-04-23T12:33:04 IST" duration-ms="9389" status="PASS">
+        <test-method signature="loginFunctionalityTest()[pri:3, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:02:53 IST" name="loginFunctionalityTest" finished-at="2020-04-23T17:03:11 IST" duration-ms="18120" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgetPaswdSubmitTest -->
-        <test-method signature="statusMessageTest()[pri:4, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:33:04 IST" name="statusMessageTest" finished-at="2020-04-23T12:33:04 IST" duration-ms="109" status="PASS">
+        </test-method> <!-- loginFunctionalityTest -->
+        <test-method signature="clickOnForgetLink()[pri:4, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:03:11 IST" name="clickOnForgetLink" finished-at="2020-04-23T17:03:21 IST" duration-ms="10058" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: #edit\-forgot\-password\-link
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-2F76RQJQ', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200403064753, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 31504, moz:profile: C:\Users\saurabh.sharma\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e0c04ef9-8433-459a-9056-182d49c41d09
+*** Element info: {Using=id, value=edit-forgot-password-link}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: #edit\-forgot\-password\-link
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-2F76RQJQ', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200403064753, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 31504, moz:profile: C:\Users\saurabh.sharma\App..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e0c04ef9-8433-459a-9056-182d49c41d09
+*** Element info: {Using=id, value=edit-forgot-password-link}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy14.click(Unknown Source)
+at ezcontent.qa.pages.LoginPage.forgetPaswd(LoginPage.java:49)
+at ezcontent.qa.testcases.LoginPageTest.clickOnForgetLink(LoginPageTest.java:52)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- statusMessageTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ezcontent.qa.testcases.ForgetPasswordPageTest@3e6ef8ad]" started-at="2020-04-23T12:33:04 IST" name="closeBrowser" finished-at="2020-04-23T12:33:05 IST" duration-ms="882" status="PASS">
+        </test-method> <!-- clickOnForgetLink -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ezcontent.qa.testcases.LoginPageTest@3e6ef8ad]" started-at="2020-04-23T17:03:21 IST" name="closeBrowser" finished-at="2020-04-23T17:03:22 IST" duration-ms="1461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- ezcontent.qa.testcases.ForgetPasswordPageTest -->
+      </class> <!-- ezcontent.qa.testcases.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -21,12 +21,13 @@ public class LoginPageTest extends TestBase {
 	@BeforeClass
 	public void setup() {
 		TestBase.initialization();     // launch browser with url
-		loginpage = new LoginPage();  // create instance of LoginPage class
+		loginpage = new LoginPage();  // create instance of LoginPage class			
 	}
 
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
-		String title = loginpage.validateLoginPageTitle();
+		
+	   String title = loginpage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Log in | EZContent");
 		System.out.println("Login Page title is :" + title);
 	}

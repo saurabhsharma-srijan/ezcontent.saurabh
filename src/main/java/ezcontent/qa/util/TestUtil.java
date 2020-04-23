@@ -8,12 +8,9 @@ import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
 
-	public static long PageLoadTimeout = 30;
+	public static long PageLoadTimeout = 20;
 	public static long ImplicitWait = 10;
 
-	public void navigateToURL(String URL) {
-		System.out.println("Navigating to: " + URL);
-	}
 
 	// implicit wait
 	public void implicitWait() {
@@ -25,6 +22,11 @@ public class TestUtil extends TestBase {
 	public static void threadWait() throws InterruptedException {		
 		Thread.sleep(5000);
 	 }
+	
+	
+	public void navigateToURL(String URL) {
+		System.out.println("Navigating to: " + URL);
+	}	
 	
 	
 	// Switch by Index

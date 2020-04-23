@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ezcontent.qa.testcases.ForgetPasswordPageTest">
+      <class name="ezcontent.qa.testcases.LoginPageTest">
         <methods>
-          <include name="setup"/>
+          <include name="clickOnForgetLink"/>
           <include name="closeBrowser"/>
-          <include name="statusMessageTest"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- ezcontent.qa.testcases.ForgetPasswordPageTest -->
+      </class> <!-- ezcontent.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -11,53 +11,49 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ezcontent.qa.util.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
-	
-	
-	public TestBase(){
-		
-	try {
+
+	public TestBase() {
+
+		try {
 			prop = new Properties();
-	FileInputStream ip = new FileInputStream("C:/Selenium_Folder/Selenium_MavenProject/Ezcontent.Srijan/src/main/java/ezcontent/qa/config/config.properties");
-	prop.load(ip);
-		} catch(FileNotFoundException e) {
+			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/ezcontent/qa/config/config.properties");
+			prop.load(ip);
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			
-		} catch(IOException e)	{
-			e.printStackTrace();	
-		}		
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
-public static void initialization() {
-	
-	String browserName = prop.getProperty("browser");
-	if (browserName.equals("chrome")) {
+	public static void initialization() {
+
+		String browserName = prop.getProperty("browser");
+		if (browserName.equals("chrome")) {
+
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+
+		} else if (browserName.equals("FF")) {
+
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		}
 		
-System.setProperty("webdriver.chrome.driver", "C:/Selenium_Folder/Selenium_MavenProject/Ezcontent.Srijan/driver/chromedriver.exe");
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
+		driver.get(prop.getProperty("url"));
+	}
 
- driver = new ChromeDriver();
+	public static void browserQuit() {
 
-	}  else if  (browserName.equals("FF")) {
-		
-System.setProperty("webdriver.gecko.driver", "C:/Selenium_Folder/Selenium_MavenProject/Ezcontent.Srijan/driver/geckodriver.exe");
+		driver.quit();
 
- driver = new FirefoxDriver();	
-}
-	driver.manage().window().maximize();
-	driver.manage().deleteAllCookies();
-	driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
-	driver.get(prop.getProperty("url"));
-	
-	}	
+	}
 
-public static void browserQuit() {
-	
-	driver.quit(); 
-	
-}
-	
 }
