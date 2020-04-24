@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ezcontent.qa.util.TestUtil;
+import ezcontent.qa.util.Wait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -45,8 +46,10 @@ public class TestBase {
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
+		Wait.pageLoad(10);
+		Wait.implicitWait(10);
+	//	driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
+	//	driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
 
@@ -55,5 +58,6 @@ public class TestBase {
 		driver.quit();
 
 	}
+	
 
 }

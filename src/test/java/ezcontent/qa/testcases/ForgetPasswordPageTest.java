@@ -9,12 +9,12 @@ import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.ForgetPasswordPage;
 import ezcontent.qa.pages.LoginPage;
 import ezcontent.qa.util.TestUtil;
+import ezcontent.qa.util.Wait;
 
 public class ForgetPasswordPageTest extends TestBase {
 
 	ForgetPasswordPage forgetPswdPage;
 	LoginPage loginpage;
-	TestUtil testUtil;
 
 	public ForgetPasswordPageTest() {
 		super(); // to call the super class(BaseClass) constructor to get prop value
@@ -47,8 +47,7 @@ public class ForgetPasswordPageTest extends TestBase {
 	@Test(priority = 3)
 	public void forgetPaswdSubmitTest() throws InterruptedException {
 		forgetPswdPage.submitForgetPaswd(prop.getProperty("username"));
-		testUtil = new TestUtil();
-		testUtil.threadWait();
+		Wait.Pause(5000);
 	}
 
 	@Test(priority = 4)

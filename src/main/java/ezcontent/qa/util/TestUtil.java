@@ -8,21 +8,9 @@ import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
 
-	public static long PageLoadTimeout = 20;
-	public static long ImplicitWait = 10;
+//	public static long PageLoadTimeout = 20;
+//	public static long ImplicitWait = 10;
 
-
-	// implicit wait
-	public void implicitWait() {
-	driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
-	}
-	
-	
-	// thread wait
-	public static void threadWait() throws InterruptedException {		
-		Thread.sleep(5000);
-	 }
-	
 	
 	public void navigateToURL(String URL) {
 		System.out.println("Navigating to: " + URL);

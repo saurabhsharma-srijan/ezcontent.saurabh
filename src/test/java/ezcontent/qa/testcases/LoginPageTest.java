@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.LoginPage;
 import ezcontent.qa.util.TestUtil;
+import ezcontent.qa.util.Wait;
 
 public class LoginPageTest extends TestBase {
 
 	LoginPage loginpage;
-	TestUtil testUtil;
 
 
 	public LoginPageTest() {
@@ -50,9 +50,8 @@ public class LoginPageTest extends TestBase {
 	public void clickOnForgetLink() throws InterruptedException {
 
 		loginpage.forgetPaswd();
-		System.out.println("click on forget password link");
-		testUtil = new TestUtil();
-		testUtil.threadWait();	
+		System.out.println("click on forget password link");	
+		Wait.Pause(5000);
 		}
 
 	@AfterClass

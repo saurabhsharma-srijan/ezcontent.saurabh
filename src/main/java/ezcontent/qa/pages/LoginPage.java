@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ezcontent.qa.base.TestBase;
+import ezcontent.qa.util.Wait;
 
 public class LoginPage extends TestBase {
 
