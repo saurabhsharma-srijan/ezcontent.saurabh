@@ -1,12 +1,13 @@
 package ezcontent.qa.util;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
+	
 
 //	public static long PageLoadTimeout = 20;
 //	public static long ImplicitWait = 10;
@@ -30,12 +31,12 @@ public class TestUtil extends TestBase {
 
 	// Switch by frame ID
 	public void switchFrameById() {
-		driver.switchTo().frame("frameId");
+		driver.switchTo().frame("id");
 	}
 
 //Switch by frame WebElement
-	public void switchFrameByWebElement() {
-		driver.switchTo().frame("iframeElement");
+	public void switchFrameByWebElement(WebElement element) {
+		driver.switchTo().frame(element);
 	}
 
 //Switch back to the main window from iframe
@@ -56,8 +57,21 @@ public class TestUtil extends TestBase {
              element.clear();
          } catch (Exception e) {
              System.out.print(String.format("The following element could not be cleared: [%s]", element.getText()));
-         }
+         } 
      }
 
+     public void action(WebElement act) throws InterruptedException {
+    	Actions action = new Actions(driver);
+ 		Thread.sleep(5000);
+ 		action.moveToElement(act).build().perform();
+     }
+     
+     public void windowScroller() {
+    	 JavascriptExecutor js = (JavascriptExecutor)driver;
+ 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+      }
+
 }
+
 

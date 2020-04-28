@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.LoginPage;
-import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 
 public class LoginPageTest extends TestBase {
@@ -20,7 +19,7 @@ public class LoginPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();     // launch browser with url
+		initialization();     // launch browser with url
 		loginpage = new LoginPage();  // create instance of LoginPage class			
 	}
 
@@ -56,7 +55,7 @@ public class LoginPageTest extends TestBase {
 
 	@AfterClass
 	public void closeBrowser() {
-		TestBase.browserQuit();
+		browserQuit();
 	}
 
 }

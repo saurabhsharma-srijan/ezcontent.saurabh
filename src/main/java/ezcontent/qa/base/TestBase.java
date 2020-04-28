@@ -4,19 +4,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
+	
+	
 	public static WebDriver driver;
 	public static Properties prop;
+	
 
 	public TestBase() {
 
@@ -32,7 +33,7 @@ public class TestBase {
 		}
 	}
 
-	public static void initialization() {
+	public static WebDriver initialization() {
 
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
@@ -49,9 +50,8 @@ public class TestBase {
 
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
-
+			
 		}
-		
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -59,7 +59,8 @@ public class TestBase {
 		Wait.implicitWait(10);
 	//	driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
 	//	driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
-		driver.get(prop.getProperty("url"));
+		driver.get(prop.getProperty("devURL"));
+		return driver;
 	}
 
 	public static void browserQuit() {

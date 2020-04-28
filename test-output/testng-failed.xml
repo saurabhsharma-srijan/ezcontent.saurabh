@@ -3,13 +3,22 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ezcontent.qa.testcases.LoginPageTest">
+      <class name="ezcontent.qa.testcases.ContentAuthorTest">
         <methods>
-          <include name="clickOnForgetLink"/>
-          <include name="closeBrowser"/>
+          <include name="navigateToAuthorPage"/>
+          <include name="entersummaryField"/>
+          <include name="enterName"/>
+          <include name="UnPublishTheContent"/>
           <include name="setup"/>
+          <include name="enterbioField"/>
+          <include name="saveTheContent"/>
+          <include name="validateHeaderTitle"/>
+          <include name="validateTabTitle"/>
+          <include name="loginFunctionality"/>
+          <include name="closeBrowser"/>
+          <include name="enterAvatar"/>
         </methods>
-      </class> <!-- ezcontent.qa.testcases.LoginPageTest -->
+      </class> <!-- ezcontent.qa.testcases.ContentAuthorTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
