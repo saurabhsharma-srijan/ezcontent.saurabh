@@ -19,7 +19,7 @@ public class ArticleMediaTest extends TestBase{
 	
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();
+		TestBase.browserLaunch();
 	}
 	@Test
 	public void login() {

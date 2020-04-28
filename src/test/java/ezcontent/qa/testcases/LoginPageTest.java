@@ -22,7 +22,7 @@ public class LoginPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();     // launch browser with url
+		TestBase.browserLaunch();     // launch browser with url
 		loginpage = new LoginPage();  // create instance of LoginPage class			
 	}
 

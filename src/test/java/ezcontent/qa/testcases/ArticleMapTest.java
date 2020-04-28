@@ -29,7 +29,7 @@ public class ArticleMapTest extends TestBase{
 	public void setup() throws IOException {
 		
 		
-		initialization(); 
+		browserLaunch();
 		
 		
 		loginpage = new LoginPage();
