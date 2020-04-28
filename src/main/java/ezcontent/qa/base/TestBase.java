@@ -36,15 +36,17 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 
-			WebDriverManager.chromedriver().setup();
+//			WebDriverManager.chromedriver().setup();
+//
+//			
+//			driver = new ChromeDriver();
+//
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			//chromeOptions.addArguments("headless");
+//			driver = new ChromeDriver(chromeOptions);
 
-			
-			driver = new ChromeDriver();
-
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("headless");
-			driver = new ChromeDriver(chromeOptions);
-
+			WebDriverManager.chromedriver().setup(); 
+			 driver = new ChromeDriver();
 
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "/Users/ghanesh.jain/Downloads/geckodriver");

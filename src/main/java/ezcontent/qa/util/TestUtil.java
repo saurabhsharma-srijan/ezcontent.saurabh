@@ -71,12 +71,12 @@ public class TestUtil extends TestBase {
              System.out.print(String.format("The following element could not be cleared: [%s]", element.getText()));
          }}
      
-     //Mouse Hover
-         public void mouseHover(WebElement element1){
-         Actions action = new Actions(driver);
-         action.moveToElement(element1).build().perform();
-        	 
-         }
+//     //Mouse Hover
+//         public void mouseHover(WebElement element1){
+//         Actions action = new Actions(driver);
+//         action.moveToElement(element1).build().perform();
+//        	 
+//         }
      
 
      // Click any element
@@ -104,14 +104,14 @@ public class TestUtil extends TestBase {
  	}
  	
  	//Mouse Hover
- 	 public static void mouseHover(WebDriver driver , WebElement element)
+ 	 public static void mouseHover(WebElement element)
 	 {
 		new Actions(driver).moveToElement(element).perform();
 		
 	 }
 	
  	//mouseClick
-	public static void mouseClick(WebDriver driver , WebElement element)
+	public static void mouseClick(WebElement element)
     {
 		
 		new Actions(driver).click(element).perform();
