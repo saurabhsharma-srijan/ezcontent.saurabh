@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
@@ -13,7 +15,7 @@ public class TestUtil extends TestBase {
 
 	
 	public void navigateToURL(String URL) {
-		System.out.println("Navigating to: " + URL);
+		driver.navigate().to(URL);
 	}	
 	
 	
@@ -56,8 +58,18 @@ public class TestUtil extends TestBase {
              element.clear();
          } catch (Exception e) {
              System.out.print(String.format("The following element could not be cleared: [%s]", element.getText()));
+         }}
+     
+     //Mouse Hover
+         public void mouseHover(WebElement element1){
+         Actions action = new Actions(driver);
+         action.moveToElement(element1).build().perform();
+        	 
          }
      }
+         
+         
+     
 
-}
+
 

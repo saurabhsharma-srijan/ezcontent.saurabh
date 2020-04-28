@@ -36,11 +36,13 @@ public class TestBase {
 		if (browserName.equals("chrome")) {
 
 			WebDriverManager.chromedriver().setup();
+			
 			driver = new ChromeDriver();
 
 		} else if (browserName.equals("FF")) {
+			System.setProperty("webdriver.gecko.driver", "/Users/ghanesh.jain/Downloads/geckodriver");
 
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		

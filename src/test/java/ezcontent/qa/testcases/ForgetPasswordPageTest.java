@@ -25,7 +25,7 @@ public class ForgetPasswordPageTest extends TestBase {
 		TestBase.initialization(); // to launch browser and get url
 
 		loginpage = new LoginPage();
-		loginpage.forgetPaswd();       // click on forget password link
+		loginpage.forgetPassword();       // click on forget password link
 
 		forgetPswdPage = new ForgetPasswordPage(); 
 	}
