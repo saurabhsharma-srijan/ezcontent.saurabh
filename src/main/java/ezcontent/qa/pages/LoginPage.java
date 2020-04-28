@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
-import junit.framework.Assert;
 
 public class LoginPage extends TestBase {
 

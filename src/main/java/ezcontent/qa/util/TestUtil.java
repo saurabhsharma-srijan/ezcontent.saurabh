@@ -3,57 +3,68 @@ package ezcontent.qa.util;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.support.ui.Select;
 import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
 
 //	public static long PageLoadTimeout = 20;
 //	public static long ImplicitWait = 10;
-
 	
-	public void navigateToURL(String URL) {
-		driver.navigate().to(URL);
+	public static Select select;
+	public static Actions action;
+
+	//Navigate to any url
+	public static void navigateToURL(String url) 
+	{
+		driver.navigate().to(url);
+
 	}	
 	
-	
 	// Switch by Index
-
-	public void switchFrameByIndex() {
-		driver.switchTo().frame("indexValue");
+	public static void switchFrameByIndex(int index)
+	{
+		driver.switchTo().frame(index);
 	}
 
-//Switch by frame name
-	public void switchFrameByName() {
-		driver.switchTo().frame("frameName");
+    //Switch by frame name
+	public static void switchFrameByName(String name)
+	{
+		driver.switchTo().frame(name);
 	}
 
 	// Switch by frame ID
-	public void switchFrameById() {
-		driver.switchTo().frame("frameId");
+	public static void switchFrameById(String frameId)
+	{
+		driver.switchTo().frame(frameId);
 	}
 
-//Switch by frame WebElement
-	public void switchFrameByWebElement() {
-		driver.switchTo().frame("iframeElement");
+    //Switch by frame WebElement
+	public static void switchFrameByWebElement(WebElement frameElement)
+	{
+		driver.switchTo().frame(frameElement);
 	}
 
-//Switch back to the main window from iframe
-	public void switchBackToWindow() {
+    //Switch back to the main window from frame
+	public static void switchBackToWindow()
+	{ 
 		driver.switchTo().defaultContent();
 	}
 
 	// switch to simple alert
-	public void switchToSimpleAlert() {
+	public static void switchToSimpleAlert() {
 	Alert simpleAlert = driver.switchTo().alert();
 	 String alertText = simpleAlert.getText();
 	 System.out.println("Alert text is " + alertText);
 	 simpleAlert.accept();
 	 }
 	 
-     public void clearField(WebElement element) {
+	 // Clear any field
+     public static void clearField(WebElement element)
+     {
          try {
              element.clear();
          } catch (Exception e) {
@@ -66,10 +77,48 @@ public class TestUtil extends TestBase {
          action.moveToElement(element1).build().perform();
         	 
          }
-     }
-         
-         
      
+
+     // Click any element
+     public static void onClick(WebElement element)
+ 	 {
+ 		element.click();
+ 	 }
+ 	
+     //select value from drop-down by index
+ 	 public static void selectByIndex(WebElement element , int index)
+ 	 {
+ 		 new Select(element).selectByIndex(index);	
+ 	 }
+ 	
+ 	//select value from drop-down by value
+ 	 public static void selectByValue(WebElement element , String value)
+ 	 {
+ 		new Select(element).selectByValue(value);
+ 	}
+ 	
+ 	//select value from drop-down by visible text
+ 	 public static void selectByText(WebElement element,String Text) 
+ 	{
+ 		new Select(element).selectByVisibleText(Text);
+ 	}
+ 	
+ 	//Mouse Hover
+ 	 public static void mouseHover(WebDriver driver , WebElement element)
+	 {
+		new Actions(driver).moveToElement(element).perform();
+		
+	 }
+	
+ 	//mouseClick
+	public static void mouseClick(WebDriver driver , WebElement element)
+    {
+		
+		new Actions(driver).click(element).perform();
+	}
+	
+}
+	
 
 
 

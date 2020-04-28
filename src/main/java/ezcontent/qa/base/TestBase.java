@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
@@ -36,8 +37,14 @@ public class TestBase {
 		if (browserName.equals("chrome")) {
 
 			WebDriverManager.chromedriver().setup();
+
 			
 			driver = new ChromeDriver();
+
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("headless");
+			driver = new ChromeDriver(chromeOptions);
+
 
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "/Users/ghanesh.jain/Downloads/geckodriver");
@@ -48,9 +55,7 @@ public class TestBase {
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		Wait.pageLoad(10);
-		Wait.implicitWait(10);
-	//	driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
+	 //   driver.manage().timeouts().pageLoadTimeout(TestUtil.PageLoadTimeout, TimeUnit.SECONDS);
 	//	driver.manage().timeouts().implicitlyWait(TestUtil.ImplicitWait, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
