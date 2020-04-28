@@ -22,7 +22,7 @@ public class ForgetPasswordPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization(); // to launch browser and get url
+		TestBase.browserLaunch(); // to launch browser and get url
 
 		loginpage = new LoginPage();
 		loginpage.forgetPassword();       // click on forget password link

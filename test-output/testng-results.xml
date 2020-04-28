@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="22698" started-at="2020-04-28T17:10:21 IST" finished-at="2020-04-28T17:10:43 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="22698" started-at="2020-04-28T17:10:21 IST" finished-at="2020-04-28T17:10:43 IST">
+      <class name="ezcontent.qa.testcases.LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="setup" is-config="true" duration-ms="7330" started-at="2020-04-28T17:10:21 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginPageTitle()[pri:1, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="loginPageTitle" duration-ms="13" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTitle -->
+        <test-method status="PASS" signature="logoImage()[pri:2, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="logoImage" duration-ms="69" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoImage -->
+        <test-method status="PASS" signature="validateUsernameLabel()[pri:3, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="validateUsernameLabel" duration-ms="44" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUsernameLabel -->
+        <test-method status="PASS" signature="validatePasswordLabel()[pri:4, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="validatePasswordLabel" duration-ms="45" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePasswordLabel -->
+        <test-method status="PASS" signature="validateuserNameHelpText()[pri:5, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="validateuserNameHelpText" duration-ms="31" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateuserNameHelpText -->
+        <test-method status="PASS" signature="validatepasswordHelpText()[pri:6, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="validatepasswordHelpText" duration-ms="30" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatepasswordHelpText -->
+        <test-method status="PASS" signature="loginFunctionality()[pri:7, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="loginFunctionality" duration-ms="5100" started-at="2020-04-28T17:10:28 IST" finished-at="2020-04-28T17:10:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFunctionality -->
+        <test-method status="PASS" signature="dashboardPageTitle()[pri:8, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="dashboardPageTitle" duration-ms="3026" started-at="2020-04-28T17:10:33 IST" finished-at="2020-04-28T17:10:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardPageTitle -->
+        <test-method status="PASS" signature="logout()[pri:9, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="logout" duration-ms="5750" started-at="2020-04-28T17:10:36 IST" finished-at="2020-04-28T17:10:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method status="PASS" signature="clickOnForgetLink()[pri:10, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="clickOnForgetLink" duration-ms="1031" started-at="2020-04-28T17:10:42 IST" finished-at="2020-04-28T17:10:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnForgetLink -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:ezcontent.qa.testcases.LoginPageTest@74650e52]" name="closeBrowser" is-config="true" duration-ms="161" started-at="2020-04-28T17:10:43 IST" finished-at="2020-04-28T17:10:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- ezcontent.qa.testcases.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
