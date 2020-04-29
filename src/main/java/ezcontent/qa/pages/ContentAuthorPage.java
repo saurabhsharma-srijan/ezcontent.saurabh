@@ -6,11 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.util.TestUtil;
+import ezcontent.qa.util.Wait;
 
 public class ContentAuthorPage extends TestBase{
 	
-	TestUtil util = new TestUtil();
-	
+//	
+//	@FindBy(xpath = "//a[@class='toolbar-icon toolbar-icon-menu trigger toolbar-item is-active']")
+//	WebElement Manage;
 
 	@FindBy(xpath = "//a[@class='toolbar-icon toolbar-icon-system-admin-content']")
 	WebElement Content;
@@ -21,7 +23,7 @@ public class ContentAuthorPage extends TestBase{
 	@FindBy(linkText = "Author")
 	WebElement Author;
 	
-	@FindBy(xpath = "//h1[@class='page-title']")
+	@FindBy(xpath = "//h1[@class='js-quickedit-page-title page-title']")
 	WebElement header;
 	
 	@FindBy(id = "edit-title-0-value")
@@ -31,13 +33,13 @@ public class ContentAuthorPage extends TestBase{
 	WebElement Avatar;
 	
 	@FindBy(xpath = "//input[@name='field_thumbnail_entity_browser_entity_browser']")
-	WebElement selcetimagebutton;
+	WebElement selectimagebutton;
 	
-	@FindBy(name="entity_browser_iframe_image_browser")
-	WebElement AuthorAvatarFrame;
+	@FindBy(xpath= "//iframe[@id='entity_browser_iframe_image_browser']")
+	WebElement authorAvatarFrame;
 	
 	
-	@FindBy(xpath = ("(//div[@class='views-row'])[1]"))
+	@FindBy(xpath = "(//div[@class='views-row'])[1]")
 	WebElement imageSelect;
 	
 	
@@ -45,7 +47,7 @@ public class ContentAuthorPage extends TestBase{
 	WebElement imageSelectbutton;
 	
 
-	@FindBy(xpath = "//*[@id='edit-body-wrapper']/div/div[2]/label/span/button")  
+	@FindBy(xpath = "//*[contains(text(),\"Edit summary\")]")  
 	WebElement summary;
 	
 	
@@ -70,9 +72,11 @@ public class ContentAuthorPage extends TestBase{
 	
 	
 	public void reachToAuthorPage() throws InterruptedException {
-				
-		util.action(Content);
-		util.action(AddContent);
+		
+
+		Wait.Pause(2000);
+		TestUtil.mouseHover(Content);
+		TestUtil.mouseHover(AddContent);
 		Author.click();
  		
 	}
@@ -93,27 +97,31 @@ public class ContentAuthorPage extends TestBase{
 	
 	public void uploadImage() throws InterruptedException {
 		Avatar.click();
-		selcetimagebutton.click();
-		util.switchFrameByWebElement(AuthorAvatarFrame);
+		selectimagebutton.click();
+		Wait.Pause(5000);
+		TestUtil.switchFrameByWebElement(authorAvatarFrame);
 		System.out.println("In frame");
-		imageSelect.click();		
+		
+		
+		imageSelect.click();	
+		Wait.Pause(2000);
 		imageSelectbutton.click();
-		util.switchBackToWindow();
+		TestUtil.switchBackToWindow();
 		System.out.println("On default page");
+		Wait.Pause(2000);
 	}
 	
 	public void summaryEntry(String sum) throws InterruptedException {
 		
-		util.windowScroller();
 		summary.click();
 		entersummary.sendKeys(sum);	
 	}
 	
 	public void bioEntry(String bio) {
-		util.switchFrameByWebElement(bioframe);
+		TestUtil.switchFrameByWebElement(bioframe);
 		System.out.println("In frame BIO");
 		enterbiobody.sendKeys(bio);	
-		util.switchBackToWindow();
+		TestUtil.switchBackToWindow();
 		System.out.println("On default page");
 	}
 	

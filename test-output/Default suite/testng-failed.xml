@@ -5,18 +5,9 @@
     <classes>
       <class name="ezcontent.qa.testcases.ContentAuthorTest">
         <methods>
-          <include name="navigateToAuthorPage"/>
           <include name="entersummaryField"/>
-          <include name="enterName"/>
-          <include name="UnPublishTheContent"/>
           <include name="setup"/>
-          <include name="enterbioField"/>
-          <include name="saveTheContent"/>
-          <include name="validateHeaderTitle"/>
-          <include name="validateTabTitle"/>
-          <include name="loginFunctionality"/>
           <include name="closeBrowser"/>
-          <include name="enterAvatar"/>
         </methods>
       </class> <!-- ezcontent.qa.testcases.ContentAuthorTest -->
     </classes>

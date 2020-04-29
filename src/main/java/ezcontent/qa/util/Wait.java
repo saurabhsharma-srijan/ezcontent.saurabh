@@ -14,6 +14,7 @@ public class Wait extends TestBase{
 
 
 	WebDriverWait Wait;
+	
 	public Wait() throws IOException {
 		super();
 		
@@ -46,7 +47,7 @@ public class Wait extends TestBase{
 	
 	public static void pageLoad(long time) {
 		
-		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 		
 	}
 	
