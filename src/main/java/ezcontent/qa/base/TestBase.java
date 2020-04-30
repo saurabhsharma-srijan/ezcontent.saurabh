@@ -54,10 +54,6 @@ public class TestBase {
 //			//chromeOptions.addArguments("headless");
 //			driver = new ChromeDriver(chromeOptions);
 
-//			WebDriverManager.chromedriver().setup(); 
-//			 driver = new ChromeDriver();
-
-
 			System.setProperty("webdriver.chrome.driver",chromeDriverPath);
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();

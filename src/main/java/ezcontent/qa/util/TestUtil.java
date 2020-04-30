@@ -1,14 +1,10 @@
 package ezcontent.qa.util;
 
 import org.openqa.selenium.Alert;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import ezcontent.qa.base.TestBase;
@@ -21,7 +17,7 @@ public class TestUtil extends TestBase {
 	public static Actions action;
 
 	//Navigate to any url
-	public void navigateToURL(String url) 
+	public static void navigateToURL(String url) 
 	{
 		driver.navigate().to(url);
 
@@ -73,6 +69,7 @@ public static void switchFrameByWebElement(WebElement frameElement)
              element.clear();
          } catch (Exception e) {
              System.out.print(String.format("The following element could not be cleared: [%s]", element.getText()));
+
          }
         }
          
@@ -85,6 +82,7 @@ public static void switchFrameByWebElement(WebElement frameElement)
     	 JavascriptExecutor js = (JavascriptExecutor)driver;
  		js.executeScript("window.scrollTo(0, 500)");
      }
+
      
      // Click any element
      public static void onClick(WebElement element)
@@ -124,7 +122,6 @@ public static void switchFrameByWebElement(WebElement frameElement)
 		new Actions(driver).click(element).perform();
 	}
 	
-
 	// scroll down
 	public static void scroll(int startdimension, int enddimension) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

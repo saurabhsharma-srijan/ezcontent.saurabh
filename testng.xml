@@ -5,6 +5,7 @@
     <classes>
       <class name="ezcontent.qa.testcases.LoginPageTest"/>
       <class name="ezcontent.qa.testcases.ForgetPasswordPageTest"/>
+      <class name="ezcontent.qa.testcases.ArticleEmbedPage"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

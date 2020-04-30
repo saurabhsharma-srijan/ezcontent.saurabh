@@ -46,7 +46,7 @@ public class ForgetPasswordPageTest extends TestBase {
 
 	@Test(priority = 3)
 	public void forgetPaswdSubmitTest() throws InterruptedException {
-		forgetPswdPage.submitForgetPaswd(prop.getProperty("username"));
+		forgetPswdPage.submitForgetPaswd(prop.getProperty("Admin"));
 		Wait.Pause(5000);
 	}
 

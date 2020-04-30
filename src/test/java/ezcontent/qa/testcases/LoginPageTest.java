@@ -95,8 +95,8 @@ public class LoginPageTest extends TestBase {
 	@Test(priority = 9)
 	public void logout() {
 		loginpage.logOut();
-		util.navigateToURL(prop.getProperty("devurl"));
-		//util.navigateToURL(prop.getProperty("url"));
+		TestUtil.navigateToURL(prop.getProperty("devurl"));
+		
 	}
 
 	@AfterClass
