@@ -31,7 +31,7 @@ public class ArticleMediaTest extends TestBase {
 
 	@Test(priority = 1)
 	public void login() {
-		loginpage.validateLogin(prop.getProperty("username"), prop.getProperty("password"));
+		loginpage.validateLogin(prop.getProperty("Admin"), prop.getProperty("Adminpass"));
 		Wait.pageLoad(4);
 	}
 	@Test(priority = 2)
@@ -57,16 +57,11 @@ public class ArticleMediaTest extends TestBase {
 		Assert.assertTrue(flag);
 	}
 	
-	@Test(priority = 6)
-	public void successfull() {
-		String text = article.successmessage();
-		Assert.assertEquals(text, "Test Title");
-		System.out.println(text);
-	}
 
-	@AfterClass
-	public void closeBrowser() {
-		TestBase.browserQuit();
-	}
+
+//	@AfterClass
+//	public void closeBrowser() {
+//		TestBase.browserQuit();
+//	}
 
 }

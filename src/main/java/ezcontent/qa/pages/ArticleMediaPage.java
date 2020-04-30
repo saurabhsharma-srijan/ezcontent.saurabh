@@ -101,6 +101,12 @@ public class ArticleMediaPage extends TestBase {
 
 	@FindBy(xpath = "//*[@class='js-quickedit-page-title title']/span[@class='field field--name-title field--type-string field--label-hidden quickedit-field']")
 	WebElement successfullMessage;
+	
+	@FindBy(xpath = "//*[@id=\"node-article-edit-form\"]/div/div[1]/fieldset[3]/legend/span")
+	WebElement content1;
+	
+	@FindBy(xpath = "//p[contains(text(),'You can select up to 1 media items (0 left).')]")
+	WebElement mediaMessage;
 
 	// To initialize the page objects
 
@@ -121,12 +127,15 @@ public class ArticleMediaPage extends TestBase {
 
 	public void dashBoardPage() throws InterruptedException {
 		content.click();
-		Wait.Pause(2000);
+		//Wait.Pause(2000);
 		addContent.click();
+		//Wait.Pause(2000);
 		article.click();
+		Wait.Pause(2000);
 	}
 
 	public void createArticle() throws InterruptedException {
+		//Wait.pageLoad(10);
 		title.sendKeys("Test Title");
 		shortTitle.sendKeys("Short Title");
 		subHead.sendKeys("Test subHead");
@@ -148,16 +157,20 @@ public class ArticleMediaPage extends TestBase {
 
 		}
 		imageSelect.click();
+		Wait.Pause(5000);
+		String imgMediamessage = mediaMessage.getText();
+		System.out.println("message is :" + imgMediamessage);
+		System.out.println("content is display");
 		JavascriptExecutor jse2 = (JavascriptExecutor) driver;
 		jse2.executeScript("arguments[0].scrollIntoView()", contain);
 		addParagraph.click();
 		media.click();
-		Wait.Pause(4000);
-		mediaType.click();
 		Wait.Pause(5000);
+		mediaType.click();
 		selectMediaAsset.click();
-		Wait.visibiltyOfElement(driver, 20, selectMediaAsset);
+		Wait.Pause(12000);
 		driver.switchTo().frame(mediaFrameId);
+		Wait.Pause(2000);
 		mediaTypeImage.click();
 		selectMediaImage.click();
 		util.scroll(0, 500);
@@ -168,8 +181,5 @@ public class ArticleMediaPage extends TestBase {
 
 	}
 
-	public String successmessage() {
-		return successfullMessage.getText();
 
-	}
 }
