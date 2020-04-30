@@ -16,8 +16,6 @@ import ezcontent.qa.base.TestBase;
 public class TestUtil extends TestBase {
 	
 
-//	public static long PageLoadTimeout = 20;
-//	public static long ImplicitWait = 10;
 	
 	public static Select select;
 	public static Actions action;
@@ -54,9 +52,9 @@ public static void switchFrameByWebElement(WebElement frameElement)
 	driver.switchTo().frame(frameElement);
 }
 
-    //Switch back to the main window from frame
-	public static void switchBackToWindow()
-	{ 
+    
+	// Switch back to the main window from iframe
+	public static void switchBackToWindow() {
 		driver.switchTo().defaultContent();
 	}
 
@@ -126,9 +124,12 @@ public static void switchFrameByWebElement(WebElement frameElement)
 		new Actions(driver).click(element).perform();
 	}
 	
+
+	// scroll down
+	public static void scroll(int startdimension, int enddimension) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + String.valueOf(startdimension) + "," + String.valueOf(enddimension) + ")");
+
+	}
+
 }
-	
-
-
-
-
