@@ -1,16 +1,14 @@
 package ezcontent.qa.testcases;
-
 import java.io.IOException;
 import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.ArticleMapPage;
 import ezcontent.qa.pages.LoginPage;
+
 
 
 
@@ -40,17 +38,14 @@ public class ArticleMapTest extends TestBase{
 	}
 	
 	@Test(priority=1)
-	public void loginTest()
-	{
+	public void loginTest() {
 	
-		
 		loginpage.validateLogin(prop.getProperty("username"), prop.getProperty("password"));
 	
 	}
 	
 	@Test(priority=2)
-	public void verifyContent()
-	{
+	public void verifyContent() {
 		
 	String contentTitle= articlemapPage.contentHeading();
 	Assert.assertEquals(contentTitle, "Content");
@@ -59,8 +54,7 @@ public class ArticleMapTest extends TestBase{
 	
 	
 	@Test(priority=3)
-	public void Content()
-	{
+	public void Content(){
 		
 	String content=articlemapPage.mousehoverOnContent();
 	Assert.assertEquals(content, "Add content");
@@ -68,15 +62,13 @@ public class ArticleMapTest extends TestBase{
 	
 	@Test(priority=4)
 	
-	public void addContent()
-	{
+	public void addContent() {
 		boolean addContent = articlemapPage.mousehoverOnAddContent();
 		Assert.assertTrue(addContent);
 	}
 	
 	@Test(priority=5)
-	public void article()
-	{
+	public void article() {
 		String article = articlemapPage.mousehoverOnArticle();
 		Assert.assertEquals(article, "Create Article");
 	
@@ -84,8 +76,7 @@ public class ArticleMapTest extends TestBase{
 	}
 	
 	@Test(priority = 6)
-	public void verifySections()
-	{
+	public void verifySections() {
 		List<String> mylist = articlemapPage.verifySubSections();
 		System.out.println(mylist);	
 	}
@@ -94,58 +85,85 @@ public class ArticleMapTest extends TestBase{
 	
 	@Test(priority =7)
 	
-	public void titleFieldLabel()
-	{
-		boolean title = articlemapPage.titleFieldLabel();
+	public void titleField(){
+	    boolean title = articlemapPage.enterTitleFieldData();
 		Assert.assertTrue(title);
 	}	
 	
-	
-	
+
 	@Test(priority = 8)
-	public void titleFieldData()
-	{
-		articlemapPage.enterTitleFieldData();	
+	public void subTitleField() {
+		boolean subTitle = articlemapPage.subTitleFieldLabel();
+		Assert.assertTrue(subTitle);
+		
 	}
+	
 	
 	@Test(priority = 9)
-	public void subTitleFieldLabel()
-	{
-		boolean subtitle = articlemapPage.subTitleFieldLabel();
-		Assert.assertTrue(subtitle);
-	}
-	
-	
-	@Test(priority=10)
-	public void subTitleFieldData()
-	{
-		articlemapPage.enterSubTitleFieldData();
-	}
-	
-	@Test(priority = 11)
-	public void subheadFieldLabel()
-	{
-		boolean subhead = articlemapPage.subheadFieldLabel();
+	public void subHeadField() {
+		boolean subhead = articlemapPage.enterSubheadFieldData();
 		Assert.assertTrue(subhead);
 	}
 	
 	
-	@Test(priority=12)
-	public void subheadFieldData()
-	{
-		articlemapPage.enterSubheadFieldData();
-	}
 	
 	
-	@Test(priority =13)
-	public void authorLabel()
-	{
-		boolean author = articlemapPage.authorLabel();
+	@Test(priority = 10)
+	public void authorField() throws InterruptedException{
+		boolean author = articlemapPage.enterAuthorFieldData();
 		Assert.assertTrue(author);
 	}
 	
+	@Test(priority=11)
+	public void summaryField(){
+		String SummaryLabel = articlemapPage.enterSummaryFieldData();
+		Assert.assertEquals(SummaryLabel, "Summary");
+	}
 	
-	@AfterClass
+	@Test(priority = 12)
+	public void thumbnailFieldLabel(){
+		String thumbnail = articlemapPage.thumbnailLabel();
+		Assert.assertEquals(thumbnail, "Thumbnail");
+	}
+	
+	
+	@Test(priority=13)
+	public void selectImages() throws InterruptedException {
+		articlemapPage.selectImages();
+	}
+
+	
+	@Test(priority=14)
+	public void addParagraphField() throws InterruptedException {
+		articlemapPage.addParagraph();
+	}
+	
+	@Test(priority=15)
+	public void googleMapField() {
+		String googleMap = articlemapPage.entergoogleMapFieldData();
+		Assert.assertEquals(googleMap, "Google Map");
+	}
+	
+    @Test(priority=16 , dependsOnMethods = {"addParagraphField" ,"googleMapField" })
+    public void tagsField() {
+   boolean tagsLabel = articlemapPage.enterTagsFieldData();
+   Assert.assertTrue(tagsLabel);
+   }
+
+   @Test(priority=18)
+   public void focusKeywordField() {
+    String focusKeyword = articlemapPage.enterFocusKeyword();
+	Assert.assertEquals(focusKeyword, "Focus keyword");
+	
+   }
+	
+   @Test(priority=19)
+   public void saveArticleContent() {
+    boolean articleCreated =	articlemapPage.saveArticleContent();
+	Assert.assertTrue(articleCreated);
+   }
+
+    @AfterClass
 	public void closeBrowser()
 	{
 		browserQuit();

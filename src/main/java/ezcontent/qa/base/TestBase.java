@@ -45,24 +45,19 @@ public class TestBase {
 		if (browserName.equals("chrome")) {
 
 
-//			WebDriverManager.chromedriver().setup();
-//
-//			
-//			driver = new ChromeDriver();
-//
-//			ChromeOptions chromeOptions = new ChromeOptions();
-//			//chromeOptions.addArguments("headless");
-//			driver = new ChromeDriver(chromeOptions);
-
-			System.setProperty("webdriver.chrome.driver",chromeDriverPath);
 			WebDriverManager.chromedriver().setup();
+
+			
 			driver = new ChromeDriver();
+
+
+
 			//ChromeOptions chromeOptions = new ChromeOptions();
 			//chromeOptions.addArguments("headless");
 			//driver = new ChromeDriver(chromeOptions);
 
 		} else if (browserName.equals("FF")) {
-			System.setProperty("webdriver.gecko.driver", fireFoxDriverPath);
+		
 			driver = new FirefoxDriver();
 			
 		} else if (browserName.equals("IE")) {

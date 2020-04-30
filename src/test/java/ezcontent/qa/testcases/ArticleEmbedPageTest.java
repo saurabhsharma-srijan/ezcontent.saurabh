@@ -27,7 +27,7 @@ public class ArticleEmbedPageTest {
 		@BeforeClass
 		public void setupSuite() throws IOException
 		{
-			initialization();
+			browserLaunch();
 			embed = new ArticleEmbedPage();
 		}
 		
