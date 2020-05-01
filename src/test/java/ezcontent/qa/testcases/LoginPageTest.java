@@ -74,13 +74,6 @@ public class LoginPageTest extends TestBase {
 		System.out.println("Login to website successfully");
 	}
 
-	@Test(priority = 10)
-	public void clickOnForgetLink() {
-
-		loginpage.forgetPassword();
-		System.out.println("click on forget password link");
-
-	}
 
 	@Test(priority = 8)
 	public void dashboardPageTitle() throws InterruptedException {
@@ -91,12 +84,27 @@ public class LoginPageTest extends TestBase {
 		Wait.Pause(3000);
 
 	}
+	
+	@Test(priority=9)
+	public void navigatetoDashboard()
+	{
+	  String text = loginpage.getDashboardUserName();
+	  Assert.assertEquals(text, prop.getProperty("dashboardUserName"));
+	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void logout() {
 		loginpage.logOut();
 		TestUtil.navigateToURL(prop.getProperty("devurl"));
 		
+	}
+	
+	@Test(priority = 11)
+	public void clickOnForgetLink() {
+
+		loginpage.forgetPassword();
+		System.out.println("click on forget password link");
+
 	}
 
 	@AfterClass

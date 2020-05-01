@@ -46,7 +46,8 @@ public class LoginPage extends TestBase {
 	@FindBy(linkText = "Log out")
 	WebElement logout;
 	
-	
+	@FindBy(xpath="//a[@id='toolbar-item-user']")
+	WebElement userNameDashboard;
 
 	// to initialize the page objects
 	public LoginPage() {
@@ -90,6 +91,11 @@ public class LoginPage extends TestBase {
 	public String validateDashboardPageTitle() {
 		return driver.getTitle();
 	}
+	
+	public String getDashboardUserName(){
+        return userNameDashboard.getText();
+    }
+	
 	public void logOut() {
 		toolBarIcon.click();
 		if (logout.isDisplayed())

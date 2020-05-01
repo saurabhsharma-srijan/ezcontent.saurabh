@@ -40,7 +40,7 @@ public class ArticleMapTest extends TestBase{
 	@Test(priority=1)
 	public void loginTest() {
 	
-		loginpage.validateLogin(prop.getProperty("username"), prop.getProperty("password"));
+		loginpage.validateLogin(prop.getProperty("Admin"), prop.getProperty("Adminpass"));
 	
 	}
 	
@@ -48,7 +48,8 @@ public class ArticleMapTest extends TestBase{
 	public void verifyContent() {
 		
 	String contentTitle= articlemapPage.contentHeading();
-	Assert.assertEquals(contentTitle, "Content");
+	Assert.assertEquals(contentTitle,prop.getProperty("contentHeading"));
+	
 	}
 	
 	
@@ -57,7 +58,8 @@ public class ArticleMapTest extends TestBase{
 	public void Content(){
 		
 	String content=articlemapPage.mousehoverOnContent();
-	Assert.assertEquals(content, "Add content");
+	Assert.assertEquals(content, prop.getProperty("addContentHeading"));
+	
 	}
 	
 	@Test(priority=4)
@@ -70,7 +72,7 @@ public class ArticleMapTest extends TestBase{
 	@Test(priority=5)
 	public void article() {
 		String article = articlemapPage.mousehoverOnArticle();
-		Assert.assertEquals(article, "Create Article");
+		Assert.assertEquals(article, prop.getProperty("articleHeading"));
 	
 		
 	}
@@ -117,13 +119,13 @@ public class ArticleMapTest extends TestBase{
 	@Test(priority=11)
 	public void summaryField(){
 		String SummaryLabel = articlemapPage.enterSummaryFieldData();
-		Assert.assertEquals(SummaryLabel, "Summary");
+		Assert.assertEquals(SummaryLabel, prop.getProperty("labelSummary"));
 	}
 	
 	@Test(priority = 12)
 	public void thumbnailFieldLabel(){
 		String thumbnail = articlemapPage.thumbnailLabel();
-		Assert.assertEquals(thumbnail, "Thumbnail");
+		Assert.assertEquals(thumbnail, prop.getProperty("labelThumbnail"));
 	}
 	
 	
@@ -141,7 +143,7 @@ public class ArticleMapTest extends TestBase{
 	@Test(priority=15)
 	public void googleMapField() {
 		String googleMap = articlemapPage.entergoogleMapFieldData();
-		Assert.assertEquals(googleMap, "Google Map");
+		Assert.assertEquals(googleMap, prop.getProperty("labelGoogleMap"));
 	}
 	
     @Test(priority=16 , dependsOnMethods = {"addParagraphField" ,"googleMapField" })
@@ -153,7 +155,7 @@ public class ArticleMapTest extends TestBase{
    @Test(priority=18)
    public void focusKeywordField() {
     String focusKeyword = articlemapPage.enterFocusKeyword();
-	Assert.assertEquals(focusKeyword, "Focus keyword");
+	Assert.assertEquals(focusKeyword, prop.getProperty("labelFocusKeyword"));
 	
    }
 	
