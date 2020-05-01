@@ -59,9 +59,9 @@ public class ArticleMediaTest extends TestBase {
 	
 
 
-//	@AfterClass
-//	public void closeBrowser() {
-//		TestBase.browserQuit();
-//	}
+	@AfterClass
+	public void closeBrowser() {
+		TestBase.browserQuit();
+	}
 
 }

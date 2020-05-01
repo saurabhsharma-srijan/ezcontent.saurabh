@@ -69,7 +69,7 @@ public class LoginPage extends TestBase {
 		password.sendKeys(pwd);
 		loginButton.click();
 	}
-	
+
 
 	public void forgetPassword() {
 		forgetPassword.click();

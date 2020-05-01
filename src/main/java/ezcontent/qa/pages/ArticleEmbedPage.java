@@ -14,9 +14,7 @@ import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 
 public class ArticleEmbedPage extends TestBase{
-	
-	JavascriptExecutor js;
-	
+		
 		@FindBy(xpath = "//a[@href='/admin/content']")
 		WebElement Content;
 		
@@ -122,6 +120,9 @@ public class ArticleEmbedPage extends TestBase{
 		@FindBy(xpath = "//label[@for = 'edit-field-yoast-seo-0-yoast-seo-focus-keyword']")
 		WebElement focusKeyword;
 		
+		@FindBy(xpath = "//div[@aria-label = 'Status message']")
+		WebElement statusMessage;
+		
 		public ArticleEmbedPage() throws IOException{
 			
 			PageFactory.initElements(driver, this);
@@ -189,8 +190,7 @@ public class ArticleEmbedPage extends TestBase{
 			if(author.isDisplayed())
 			{
 				authorField.sendKeys("fe");
-				js = (JavascriptExecutor) driver;  
-				js.executeScript("window.scrollBy(0,200)","");
+				TestUtil.scroll(0, 200);
 				Wait.visibiltyOfElement(2, authorAutoSuggestion);
 				TestUtil.mouseClick(authorAutoSuggestion);
 			}
@@ -208,8 +208,7 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public String selectImageFromThumbnail()
 		{
-			js = (JavascriptExecutor) driver;  
-			js.executeScript("window.scrollBy(0,500)","");
+			TestUtil.scroll(0, 500);
 			TestUtil.mouseClick(selectImageButton);
             Wait.visibiltyOfElement(4, iframeImage);
 			TestUtil.switchFrameByWebElement(iframeImage);
@@ -221,8 +220,8 @@ public class ArticleEmbedPage extends TestBase{
         
 		public String verifyAddParagraph()
 		{
-			js = (JavascriptExecutor) driver;  
-			js.executeScript("window.scrollBy(0,400)","");	
+	
+			TestUtil.scroll(0, 400);
 			TestUtil.onClick(paragraphButton);
 			 try {
 				Wait.Pause(5000);
@@ -245,8 +244,8 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public void verifyTaxonomyField()
 		{	
-			js = (JavascriptExecutor) driver;  
-			js.executeScript("window.scrollBy(0,800)","");
+
+			TestUtil.scroll(0, 800);
 			TestUtil.onClick(taxonomy);
 			if(tag.isDisplayed())
 			{
@@ -268,10 +267,11 @@ public class ArticleEmbedPage extends TestBase{
 			return realTime.getText();
 		}
 		
-		public void saveasPublished()
+		public boolean saveasPublished()
 		{
 			TestUtil.selectByValue(saveAs, "published");
 			TestUtil.onClick(saveButton);
+			return statusMessage.isDisplayed();
 			
 		}
 		

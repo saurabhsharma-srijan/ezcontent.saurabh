@@ -35,7 +35,7 @@ public class ArticleEmbedPageTest {
 		public void validateMenu() throws IOException
 		{
 			page = new LoginPage();
-			page.validateLogin(prop.getProperty("Admin"), prop.getProperty("Adminpass"));
+			page.validateLogin(prop.getProperty("Admin"),prop.getProperty("Adminpass"));
 			Boolean menuResult = embed.validateMenu();
 			Assert.assertTrue(menuResult, "Content is not displayed");
 		 	
@@ -134,10 +134,11 @@ public class ArticleEmbedPageTest {
 		@Test(priority =15 , dependsOnMethods = {"validateTitleField" ,"selectParagraphFromContent" })
 		public void validatesaveasPublished()
 		{
-			embed.saveasPublished();
+			Boolean statusMessage = embed.saveasPublished();
+			Assert.assertTrue(statusMessage);
 		}
 				
-//		@AfterClass
+		@AfterClass
 		public void closeBrowser()
 		{
 			browserQuit();
