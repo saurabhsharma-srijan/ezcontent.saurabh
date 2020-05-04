@@ -24,20 +24,20 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
               <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
                     <span>testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                    <span class="method-stats">17 methods, 3 failed,   14 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,8 +101,18 @@
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LoginPageTest" hash-for-method="clickOnForgetLink">clickOnForgetLink</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="fifthBlockConfiguration">fifthBlockConfiguration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="secondBlockConfiguration">secondBlockConfiguration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="sixthBlockConfiguration">sixthBlockConfiguration</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -115,18 +125,73 @@
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LoginPageTest" hash-for-method="loginFunctionalityTest">loginFunctionalityTest</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="EnterBody">EnterBody</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LoginPageTest" hash-for-method="loginPageTitleTest">loginPageTitleTest</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="blockConfiguration">blockConfiguration</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LoginPageTest" hash-for-method="logoImageTest">logoImageTest</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="chooseAndAddBlock">chooseAndAddBlock</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="closeStatusMsg">closeStatusMsg</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="fourthBlockConfiguration">fourthBlockConfiguration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="landingPageTitleTest">landingPageTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="redirectiontest">redirectiontest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="thirdBlockConfiguration">thirdBlockConfiguration</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validateCreationStatusMessage">validateCreationStatusMessage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validateLogFieldTest">validateLogFieldTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validateSectionCountInLayout">validateSectionCountInLayout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validateTitleFieldLabelTest">validateTitleFieldLabelTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validateTitleFieldTest">validateTitleFieldTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ezcontent.qa.testcases.LandingPageTest" class="method navigator-link" hash-for-method="validatelayoutStatusMsg">validatelayoutStatusMsg</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -144,26 +209,28 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">ezcontent.qa.testcases.LoginPageTest</span>
+              <span class="class-name">ezcontent.qa.testcases.LandingPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="clickOnForgetLink">
-                  </a> <!-- clickOnForgetLink -->
-                  <span class="method-name">clickOnForgetLink</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: #edit\-forgot\-password\-link
+                  <a name="fifthBlockConfiguration">
+                  </a> <!-- fifthBlockConfiguration -->
+                  <span class="method-name">fifthBlockConfiguration</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;drupal-off-canvas&apos;]//ul[@class=&apos;layout-selection list-group&apos;]&quot;}
+  (Session info: chrome=81.0.4044.129)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;srijans-MacBook-Pro-3.local&apos;, ip: &apos;fe80:0:0:0:443:bb81:c0c7:defe%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.1&apos;, java.version: &apos;1.8.0_241&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200309095159, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 7028, moz:profile: /var/folders/14/3qlyz8qx4js..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: MAC, platformName: MAC, platformVersion: 19.0.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 10a66a77-5a71-2f4e-818d-a0e8819ad5ba
-*** Element info: {Using=id, value=edit-forgot-password-link}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+System info: host: &apos;Poonam-Lata-MBP.local&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: /var/folders/tf/r49cy4dx4b1...}, goog:chromeOptions: {debuggerAddress: localhost:49337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 721a5703374b91ebbe4a99cbdc2a43db
+*** Element info: {Using=xpath, value=//div[@id=&apos;drupal-off-canvas&apos;]//ul[@class=&apos;layout-selection list-group&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -171,18 +238,19 @@ Session ID: 10a66a77-5a71-2f4e-818d-a0e8819ad5ba
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at ezcontent.qa.pages.LoginPage.forgetPaswd(LoginPage.java:50)
-	at ezcontent.qa.testcases.LoginPageTest.clickOnForgetLink(LoginPageTest.java:52)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.proxy.$Proxy12.findElements(Unknown Source)
+	at ezcontent.qa.pages.LandingPage.getNumberOfSection(LandingPage.java:291)
+	at ezcontent.qa.pages.LandingPage.fifthSection(LandingPage.java:456)
+	at ezcontent.qa.testcases.LandingPageTest.fifthBlockConfiguration(LandingPageTest.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
 	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
 	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
@@ -191,7 +259,140 @@ Session ID: 10a66a77-5a71-2f4e-818d-a0e8819ad5ba
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="secondBlockConfiguration">
+                  </a> <!-- secondBlockConfiguration -->
+                  <span class="method-name">secondBlockConfiguration</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@id=&apos;ui-id-16&apos;]&quot;}
+  (Session info: chrome=81.0.4044.129)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Poonam-Lata-MBP.local&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: /var/folders/tf/r49cy4dx4b1...}, goog:chromeOptions: {debuggerAddress: localhost:49337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 721a5703374b91ebbe4a99cbdc2a43db
+*** Element info: {Using=xpath, value=//a[@id=&apos;ui-id-16&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
+	at ezcontent.qa.pages.LandingPage.secondSection(LandingPage.java:410)
+	at ezcontent.qa.testcases.LandingPageTest.secondBlockConfiguration(LandingPageTest.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sixthBlockConfiguration">
+                  </a> <!-- sixthBlockConfiguration -->
+                  <span class="method-name">sixthBlockConfiguration</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;drupal-off-canvas&apos;]//ul[@class=&apos;layout-selection list-group&apos;]&quot;}
+  (Session info: chrome=81.0.4044.129)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Poonam-Lata-MBP.local&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.6&apos;, java.version: &apos;13.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: /var/folders/tf/r49cy4dx4b1...}, goog:chromeOptions: {debuggerAddress: localhost:49337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 721a5703374b91ebbe4a99cbdc2a43db
+*** Element info: {Using=xpath, value=//div[@id=&apos;drupal-off-canvas&apos;]//ul[@class=&apos;layout-selection list-group&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.findElements(Unknown Source)
+	at ezcontent.qa.pages.LandingPage.getNumberOfSection(LandingPage.java:291)
+	at ezcontent.qa.pages.LandingPage.sixthSection(LandingPage.java:483)
+	at ezcontent.qa.testcases.LandingPageTest.sixthBlockConfiguration(LandingPageTest.java:157)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
 	at org.testng.TestRunner.privateRun(TestRunner.java:766)
 	at org.testng.TestRunner.run(TestRunner.java:587)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
@@ -216,28 +417,105 @@ Session ID: 10a66a77-5a71-2f4e-818d-a0e8819ad5ba
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">ezcontent.qa.testcases.LoginPageTest</span>
+              <span class="class-name">ezcontent.qa.testcases.LandingPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginFunctionalityTest">
-                  </a> <!-- loginFunctionalityTest -->
-                  <span class="method-name">loginFunctionalityTest</span>
+                  <a name="EnterBody">
+                  </a> <!-- EnterBody -->
+                  <span class="method-name">EnterBody</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginPageTitleTest">
-                  </a> <!-- loginPageTitleTest -->
-                  <span class="method-name">loginPageTitleTest</span>
+                  <a name="blockConfiguration">
+                  </a> <!-- blockConfiguration -->
+                  <span class="method-name">blockConfiguration</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="logoImageTest">
-                  </a> <!-- logoImageTest -->
-                  <span class="method-name">logoImageTest</span>
+                  <a name="chooseAndAddBlock">
+                  </a> <!-- chooseAndAddBlock -->
+                  <span class="method-name">chooseAndAddBlock</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="closeStatusMsg">
+                  </a> <!-- closeStatusMsg -->
+                  <span class="method-name">closeStatusMsg</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="fourthBlockConfiguration">
+                  </a> <!-- fourthBlockConfiguration -->
+                  <span class="method-name">fourthBlockConfiguration</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="landingPageTitleTest">
+                  </a> <!-- landingPageTitleTest -->
+                  <span class="method-name">landingPageTitleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="redirectiontest">
+                  </a> <!-- redirectiontest -->
+                  <span class="method-name">redirectiontest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="thirdBlockConfiguration">
+                  </a> <!-- thirdBlockConfiguration -->
+                  <span class="method-name">thirdBlockConfiguration</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCreationStatusMessage">
+                  </a> <!-- validateCreationStatusMessage -->
+                  <span class="method-name">validateCreationStatusMessage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateLogFieldTest">
+                  </a> <!-- validateLogFieldTest -->
+                  <span class="method-name">validateLogFieldTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateSectionCountInLayout">
+                  </a> <!-- validateSectionCountInLayout -->
+                  <span class="method-name">validateSectionCountInLayout</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleFieldLabelTest">
+                  </a> <!-- validateTitleFieldLabelTest -->
+                  <span class="method-name">validateTitleFieldLabelTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateTitleFieldTest">
+                  </a> <!-- validateTitleFieldTest -->
+                  <span class="method-name">validateTitleFieldTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validatelayoutStatusMsg">
+                  </a> <!-- validatelayoutStatusMsg -->
+                  <span class="method-name">validatelayoutStatusMsg</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -245,16 +523,16 @@ Session ID: 10a66a77-5a71-2f4e-818d-a0e8819ad5ba
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/14/3qlyz8qx4js435qglty1nphm0000gp/T/testng-eclipse--1337426714/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/tf/r49cy4dx4b14y2rk4_zf3h900000gp/T/testng-eclipse-1690734444/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ezcontent.qa.testcases.LoginPageTest&quot;/&gt;
+      &lt;class name=&quot;ezcontent.qa.testcases.LandingPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -294,28 +572,80 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(17);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clickOnForgetLink')
-data.setCell(0, 2, 'ezcontent.qa.testcases.LoginPageTest')
-data.setCell(0, 3, 10039);
+data.setCell(0, 1, 'secondBlockConfiguration')
+data.setCell(0, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(0, 3, 33060);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginFunctionalityTest')
-data.setCell(1, 2, 'ezcontent.qa.testcases.LoginPageTest')
-data.setCell(1, 3, 3653);
+data.setCell(1, 1, 'fifthBlockConfiguration')
+data.setCell(1, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(1, 3, 25115);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'logoImageTest')
-data.setCell(2, 2, 'ezcontent.qa.testcases.LoginPageTest')
-data.setCell(2, 3, 80);
+data.setCell(2, 1, 'sixthBlockConfiguration')
+data.setCell(2, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(2, 3, 25100);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'loginPageTitleTest')
-data.setCell(3, 2, 'ezcontent.qa.testcases.LoginPageTest')
-data.setCell(3, 3, 22);
+data.setCell(3, 1, 'fourthBlockConfiguration')
+data.setCell(3, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(3, 3, 21646);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'thirdBlockConfiguration')
+data.setCell(4, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(4, 3, 14222);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'blockConfiguration')
+data.setCell(5, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(5, 3, 13142);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'chooseAndAddBlock')
+data.setCell(6, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(6, 3, 6509);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'redirectiontest')
+data.setCell(7, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(7, 3, 6307);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'validateSectionCountInLayout')
+data.setCell(8, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(8, 3, 6247);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'EnterBody')
+data.setCell(9, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(9, 3, 5224);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'validateCreationStatusMessage')
+data.setCell(10, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(10, 3, 4281);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'validatelayoutStatusMsg')
+data.setCell(11, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(11, 3, 2472);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'validateLogFieldTest')
+data.setCell(12, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(12, 3, 306);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'validateTitleFieldTest')
+data.setCell(13, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(13, 3, 212);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'closeStatusMsg')
+data.setCell(14, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(14, 3, 78);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'validateTitleFieldLabelTest')
+data.setCell(15, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(15, 3, 35);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'landingPageTitleTest')
+data.setCell(16, 2, 'ezcontent.qa.testcases.LandingPageTest')
+data.setCell(16, 3, 11);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -341,33 +671,153 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">ezcontent.qa.testcases.LoginPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ezcontent.qa.testcases.LandingPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">loginPageTitleTest</span>
-                <span class="method-start">9594 ms</span>
+                <span class="method-name">redirectiontest</span>
+                <span class="method-start">22019 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=redirectiontest status=SUCCESS method=LandingPageTest.redirectiontest()[pri:0, inst...)</span>
+                <span class="method-start">28331 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">logoImageTest</span>
-                <span class="method-start">9621 ms</span>
+                <span class="method-name">landingPageTitleTest</span>
+                <span class="method-start">28339 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=landingPageTitleTest status=SUCCESS method=LandingPageTest.landingPageTitleTest()[p...)</span>
+                <span class="method-start">28352 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">loginFunctionalityTest</span>
-                <span class="method-start">9702 ms</span>
+                <span class="method-name">validateTitleFieldTest</span>
+                <span class="method-start">28354 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validateTitleFieldTest status=SUCCESS method=LandingPageTest.validateTitleFieldTest...)</span>
+                <span class="method-start">28569 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateTitleFieldLabelTest</span>
+                <span class="method-start">28571 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validateTitleFieldLabelTest status=SUCCESS method=LandingPageTest.validateTitleFiel...)</span>
+                <span class="method-start">28608 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateLogFieldTest</span>
+                <span class="method-start">28609 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validateLogFieldTest status=SUCCESS method=LandingPageTest.validateLogFieldTest()[p...)</span>
+                <span class="method-start">28917 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">EnterBody</span>
+                <span class="method-start">28918 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=EnterBody status=SUCCESS method=LandingPageTest.EnterBody()[pri:6, instance:ezconte...)</span>
+                <span class="method-start">34144 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateCreationStatusMessage</span>
+                <span class="method-start">34145 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validateCreationStatusMessage status=SUCCESS method=LandingPageTest.validateCreatio...)</span>
+                <span class="method-start">38428 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">closeStatusMsg</span>
+                <span class="method-start">38430 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=closeStatusMsg status=SUCCESS method=LandingPageTest.closeStatusMsg()[pri:8, instan...)</span>
+                <span class="method-start">38510 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validatelayoutStatusMsg</span>
+                <span class="method-start">38512 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validatelayoutStatusMsg status=SUCCESS method=LandingPageTest.validatelayoutStatusM...)</span>
+                <span class="method-start">40986 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">validateSectionCountInLayout</span>
+                <span class="method-start">40989 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=validateSectionCountInLayout status=SUCCESS method=LandingPageTest.validateSectionC...)</span>
+                <span class="method-start">47238 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">chooseAndAddBlock</span>
+                <span class="method-start">47239 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=chooseAndAddBlock status=SUCCESS method=LandingPageTest.chooseAndAddBlock()[pri:11,...)</span>
+                <span class="method-start">53750 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">blockConfiguration</span>
+                <span class="method-start">53751 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=blockConfiguration status=SUCCESS method=LandingPageTest.blockConfiguration()[pri:1...)</span>
+                <span class="method-start">66894 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">clickOnForgetLink</span>
-                <span class="method-start">13356 ms</span>
+                <span class="method-name">secondBlockConfiguration</span>
+                <span class="method-start">66896 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">23399 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=secondBlockConfiguration status=FAILURE method=LandingPageTest.secondBlockConfigura...)</span>
+                <span class="method-start">99959 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">thirdBlockConfiguration</span>
+                <span class="method-start">100288 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=thirdBlockConfiguration status=SUCCESS method=LandingPageTest.thirdBlockConfigurati...)</span>
+                <span class="method-start">114511 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">fifthBlockConfiguration</span>
+                <span class="method-start">114512 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=fifthBlockConfiguration status=FAILURE method=LandingPageTest.fifthBlockConfigurati...)</span>
+                <span class="method-start">139630 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">fourthBlockConfiguration</span>
+                <span class="method-start">139909 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=fourthBlockConfiguration status=SUCCESS method=LandingPageTest.fourthBlockConfigura...)</span>
+                <span class="method-start">161557 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">sixthBlockConfiguration</span>
+                <span class="method-start">161559 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">takeScreenShotOnFailure([TestResult name=sixthBlockConfiguration status=FAILURE method=LandingPageTest.sixthBlockConfigurati...)</span>
+                <span class="method-start">186661 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
