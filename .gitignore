@@ -1,2 +1,9 @@
 /target/
+<<<<<<< HEAD
 /.DS_Store
+=======
+/test-output
+/.DS_Store
+/.classpath
+/.settings
+>>>>>>> 1c828bc029a2bb7bf96fcc0c14965af411525e1c

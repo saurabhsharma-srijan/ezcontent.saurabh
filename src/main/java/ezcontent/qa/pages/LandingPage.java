@@ -228,8 +228,8 @@ public class LandingPage extends TestBase {
 	public void redirectiontolandingpage() {
 		
 		
-		TestUtil.mousehover(content);
-		TestUtil.mousehover(addcontent);
+		TestUtil.mouseHover(content);
+		TestUtil.mouseHover(addcontent);
 		landingPageContent.click();
 		
 		
@@ -260,9 +260,9 @@ public class LandingPage extends TestBase {
 	public void enterInBodyField(String bodytext) throws InterruptedException {
 		
 		Wait.Pause(5000);
-		testutil.switchFrameByWebElement(bodyFrame);
+		TestUtil.switchFrameByWebElement(bodyFrame);
 		bodyfield.sendKeys(bodytext);
-		testutil.switchBackToFrame();
+		TestUtil.switchBackToWindow();
 			
 	}
 	
@@ -313,7 +313,7 @@ public class LandingPage extends TestBase {
 	
 		public void goToCustomBlock(String customBlockType) {
 		
-		Wait.elementClickable(driver, 2000,createCustomBlockLink);
+		Wait.elementClickable(2000,createCustomBlockLink);
 
 		createCustomBlockLink.click();
 		
@@ -339,27 +339,27 @@ public class LandingPage extends TestBase {
 	
 	public void configureBlock() throws InterruptedException {
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 	
 		configureBlockTitleField.sendKeys("Configure Block title ");
 		heroCardTitleField.sendKeys("This is Hero card Title");
 		
 		heroCardShortTitle.sendKeys("This is Hero card short title");
-		Wait.elementClickable(driver, 5000,selectImageBtn);
+		Wait.elementClickable(5000,selectImageBtn);
 		selectImageBtn.click();
 		
-		testutil.switchFrameByWebElement(entityBrowser);
+		TestUtil.switchFrameByWebElement(entityBrowser);
 		TestUtil.jsExecuterClick(image);
 		TestUtil.jsExecuterClick(selectBtn);
 		
 		heroCardSubhead.sendKeys("This is subhead");
-		testutil.switchFrameByWebElement(summaryFrame);
-		Wait.elementClickable(driver, 5000,summaryText);
+		TestUtil.switchFrameByWebElement(summaryFrame);
+		Wait.elementClickable(5000,summaryText);
 		summaryText.sendKeys("This is Summary text");
 		
-		testutil.switchBackToFrame();
+		TestUtil.switchBackToWindow();
 		
-		Wait.elementClickable(driver, 10000,linkUrl);
+		Wait.elementClickable(10000,linkUrl);
 		linkUrl.sendKeys(prop.getProperty("googleUrl"));
 		
 		Wait.Pause(3000);
@@ -388,14 +388,14 @@ public class LandingPage extends TestBase {
 	
 	public void secondSection() throws InterruptedException {
 		
-		Wait.elementClickable(driver, 5000,addSecondSection);
+		Wait.elementClickable(5000,addSecondSection);
 		TestUtil.jsExecuterClick(addSecondSection);
 		getNumberOfSection("Two column" ,"Test Section 2");
 		
 		TestUtil.jsExecuterClick(addSecondBlock);
 		goToCustomBlock("Content Listing Component");
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 		configureBlockTitleField.sendKeys("Configure Block title ");
 	
 //		authorField.sendKeys("Fe");
@@ -416,14 +416,14 @@ public class LandingPage extends TestBase {
 	
 	public void thirdSection() throws InterruptedException {
 		
-		Wait.elementClickable(driver, 5000,addSecondSection);
+		Wait.elementClickable(5000,addSecondSection);
 		TestUtil.jsExecuterClick(addThirdSection);
 		getNumberOfSection("Three column" ,"Test Section 3");
 		
 		TestUtil.jsExecuterClick(addThirdBlock);
 		goToCustomBlock("Embed Block");
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 		configureBlockTitleField.sendKeys("Configure Block title ");
 		scriptText.sendKeys("This is script text");
 		
@@ -434,14 +434,14 @@ public class LandingPage extends TestBase {
 	
 	public void fourthSection() throws InterruptedException {
 		
-		Wait.elementClickable(driver, 5000,addFourthSection);
+		Wait.elementClickable(5000,addFourthSection);
 		TestUtil.jsExecuterClick(addFourthSection);
 		getNumberOfSection("Four column" ,"Test Section 4");
 		
 		TestUtil.jsExecuterClick(addFourthBlock);
 		goToCustomBlock("Hero Media Block");
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 		
 		configureBlock();
 		reusableAddBlock();
@@ -451,21 +451,21 @@ public class LandingPage extends TestBase {
 
 	public void fifthSection() throws InterruptedException {
 		
-		Wait.elementClickable(driver, 5000,addFifthSection);
+		Wait.elementClickable(5000,addFifthSection);
 		TestUtil.jsExecuterClick(addFifthSection);
 		getNumberOfSection("One column" ,"Test Section 5");
 		
 		TestUtil.jsExecuterClick(addFifthBlock);
 		goToCustomBlock("Map Block");
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 		configureBlockTitleField.sendKeys("Configure fifth Block title ");
 		
 		shortTitle.sendKeys("This is short title");
 		googleMap.sendKeys(prop.getProperty("googleMapUrl"));
 		
 		testutil.switchFrameByWebElement(bodyIframe);
-		Wait.elementClickable(driver, 5000,summaryText);
+		Wait.elementClickable(5000,summaryText);
 		summaryText.sendKeys("This is Summary text");
 		
 		link.sendKeys(prop.getProperty("googleUrl"));
@@ -478,14 +478,14 @@ public class LandingPage extends TestBase {
 
 public void sixthSection() throws InterruptedException {
 		
-		Wait.elementClickable(driver, 5000,addFifthSection);
+		Wait.elementClickable(5000,addFifthSection);
 		TestUtil.jsExecuterClick(addSixthSection);
 		getNumberOfSection("Two column" ,"Test Section 5");
 		
 		TestUtil.jsExecuterClick(addSixthBlock);
 		goToCustomBlock("Paragraph Content");
 		
-		Wait.visibiltyOfElement(driver, 5000, configureBlockTitleField);
+		Wait.visibiltyOfElement(5000, configureBlockTitleField);
 		configureBlockTitleField.sendKeys("Configure sixth Block title ");
 		addParagraphBtn.click();
 		
@@ -500,7 +500,7 @@ public void sixthSection() throws InterruptedException {
         	}
         	
         	testutil.switchFrameByWebElement(bodyIframe);
-    		Wait.elementClickable(driver, 5000,summaryText);
+    		Wait.elementClickable(5000,summaryText);
     		summaryText.sendKeys("This is Summary text");
     		reusableAddBlock();
 		

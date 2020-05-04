@@ -10,47 +10,53 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ezcontent.qa.base.TestBase;
 
-public class Wait extends TestBase{
-
+public class Wait extends TestBase {
 
 	WebDriverWait Wait;
+
+	
 	public Wait() throws IOException {
 		super();
-		
+
 	}
 
-	public static void implicitWait(long time)
-	{
+	public static void implicitWait(long time) {
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-		
+
 	}
-	
-	public static void Pause(long millis) throws InterruptedException
-	{
-		
+
+	public static void Pause(long millis) throws InterruptedException {
+
 		Thread.sleep(millis);
 	}
-	
-	public static void elementClickable(WebDriver driver,long timeout,WebElement element)
+
+	public static void elementClickable(long timeout,WebElement element)
 	{
 		
+
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
-				 
+
 	}
+
 	
-	public static void visibiltyOfElement(WebDriver driver,long timeout,WebElement element)
+	public static void visibiltyOfElement(long timeout,WebElement element)
 	{
 		
+
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 	}
-	
+
 	public static void pageLoad(long time) {
 		
-		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 		
 	}
 	
 	
-}
+
+
+		
+
+	}
 
 
