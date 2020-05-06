@@ -35,6 +35,31 @@ public class ArticleMediaPage extends TestBase {
 
 	@FindBy(id = "edit-title-0-value")
 	WebElement title;
+	
+	@FindBy(id = "edit-revision-log-0-value")
+	WebElement RivisionMessage;
+	
+	@FindBy(xpath = "//*[@id='edit-menu']//summary[text()='Menu settings']")
+	WebElement menuSetting;
+	
+	@FindBy(xpath = "//*[@id='edit-field-meta-tags-0']//summary[text()='Meta Tags']")
+	WebElement metaTags;
+	
+	@FindBy(xpath = "//*[@id='edit-simple-sitemap']//summary[text()='Simple XML Sitemap']")
+	WebElement xmlSiteMap;
+	
+	@FindBy(xpath = "//*[@id='edit-scheduler-settings']//summary[text()='Scheduling options']")
+	WebElement scheduling;
+	
+	@FindBy(xpath = "//*[@id='edit-path-0']//summary[text()='URL alias']")
+	WebElement urlAlias;
+	
+	@FindBy(xpath = "//*[@id='edit-author']//summary[text()='Authoring information']")
+	WebElement authoringinfo;
+	
+	@FindBy(xpath = "//*[@id='edit-options']//summary[text()='Promotion options']")
+	WebElement promotionOption;
+	
 
 	@FindBy(id = "edit-field-short-title-0-value")
 	WebElement shortTitle;
@@ -72,7 +97,7 @@ public class ArticleMediaPage extends TestBase {
 	@FindBy(name = "field_content_0_subform_field_media_entity_browser_entity_browser")
 	WebElement selectMediaAsset;
 
-	@FindBy(xpath = "//*[@class='views-row'][1]")
+	@FindBy(xpath = "//*[@class='views-row'][2]")
 	WebElement mediaTypeImage;
 
 	@FindBy(id = "entity_browser_iframe_asset_browser")
@@ -107,7 +132,10 @@ public class ArticleMediaPage extends TestBase {
 	
 	@FindBy(xpath = "//p[contains(text(),'You can select up to 1 media items (0 left).')]")
 	WebElement mediaMessage;
-
+	
+	@FindBy(xpath = "//*[@id=\"edit-field-thumbnail\"]/summary")
+	WebElement thumbnail;
+	
 	// To initialize the page objects
 
 	public ArticleMediaPage() {
@@ -124,24 +152,87 @@ public class ArticleMediaPage extends TestBase {
 	public boolean validateLogo() {
 		return logo.isDisplayed();
 	}
-
+	
+	public boolean validateTitle() {
+		return title.isDisplayed();
+	}
+	
+	public boolean validateShortTitle() {
+		return shortTitle.isDisplayed();
+	}
+	public boolean validateSubHead() {
+		return subHead.isDisplayed();
+	}
+    public boolean author() {
+    	return author.isDisplayed();	
+    }
+    
+    public boolean summary() {
+    	return summary.isDisplayed();
+    }
+    public boolean selectImageField() {
+    	return selectImage.isDisplayed();
+    }
+    public boolean media() {
+    	return contain.isDisplayed();
+    }
+    
+    public boolean selectAsset() {
+    	return taxonomy.isDisplayed();
+    }
+    
+    public boolean addParagraph() {
+    	return addParagraph.isDisplayed();
+    }
+    public boolean taxnomy() {
+    	return taxonomy.isDisplayed();
+    }
+    
+    public boolean menuSetting() {
+    	return menuSetting.isDisplayed();  	
+    }
+    public boolean xmlSiteMap() {
+    	return xmlSiteMap.isDisplayed(); 
+    }
+    public boolean scheduling() {
+    	return scheduling.isDisplayed(); 
+    }
+    public boolean metaTags() {
+    	return metaTags.isDisplayed(); 
+    }
+    public boolean urlAlias() {
+    	return urlAlias.isDisplayed(); 
+    }
+    
+    public boolean authoring() {
+    	return authoringinfo.isDisplayed(); 
+    }
+    public boolean promotion() {
+    	return promotionOption.isDisplayed(); 
+    }
+    
 	public void dashBoardPage() throws InterruptedException {
 		content.click();
-		//Wait.Pause(2000);
-		addContent.click();
-		//Wait.Pause(2000);
+		Wait.Pause(3000);
+		//addContent.click();
+		WebElement element = addContent;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		Wait.Pause(3000);
 		article.click();
-		Wait.Pause(2000);
+		Wait.Pause(3000);
 	}
 
 	public void createArticle() throws InterruptedException {
-		//Wait.pageLoad(10);
+		//Wait.implicitWait(25);
 		title.sendKeys("Test Title");
+		RivisionMessage.sendKeys("test");
 		shortTitle.sendKeys("Short Title");
 		subHead.sendKeys("Test subHead");
 		author.sendKeys("Male User", Keys.TAB);
 		summary.sendKeys("Test");
-		util.scroll(0, 400);
+		Wait.Pause(4000);
+		util.scroll(0, 300);
 		selectImage.click();
 		Wait.Pause(5000);
 		driver.switchTo().frame(frameId);
@@ -168,7 +259,7 @@ public class ArticleMediaPage extends TestBase {
 		Wait.Pause(5000);
 		mediaType.click();
 		selectMediaAsset.click();
-		Wait.Pause(12000);
+		Wait.Pause(6000);
 		driver.switchTo().frame(mediaFrameId);
 		Wait.Pause(2000);
 		mediaTypeImage.click();

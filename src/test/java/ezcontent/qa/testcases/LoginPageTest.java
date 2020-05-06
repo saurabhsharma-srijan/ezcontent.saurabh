@@ -28,7 +28,7 @@ public class LoginPageTest extends TestBase {
 	@BeforeClass
 	public void setup() {
 
-		TestBase.browserQuit();     // launch browser with url
+		TestBase.browserLaunch();     // launch browser with url
 		loginpage = new LoginPage();  // create instance of LoginPage class			
 		
 		
@@ -86,7 +86,7 @@ public class LoginPageTest extends TestBase {
 		
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 11)
 	public void clickOnForgetLink() throws InterruptedException, IOException {
 
 		loginpage.forgetPassword();

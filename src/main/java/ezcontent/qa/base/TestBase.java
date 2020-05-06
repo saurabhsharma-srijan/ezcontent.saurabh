@@ -1,6 +1,5 @@
 package ezcontent.qa.base;
 
-import java.io.FileInputStream;  
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
@@ -10,12 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ezcontent.qa.util.Wait;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -53,15 +48,27 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 
-
 			WebDriverManager.chromedriver().setup();
 
 			
 			driver = new ChromeDriver();
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+//
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			//chromeOptions.addArguments("headless");
+//			driver = new ChromeDriver(chromeOptions);
+
+
 
 
 
 			//ChromeOptions chromeOptions = new ChromeOptions();
+			//System.setProperty("webdriver.chrome.driver",chromeDriverPath);
+//			WebDriverManager.chromedriver().version("81.0.4044.69").setup();
+//			ChromeOptions chromeOptions = new ChromeOptions();
+			//chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			//driver = new ChromeDriver(chromeOptions);
 			//chromeOptions.addArguments("headless");
 			//driver = new ChromeDriver(chromeOptions);
 
