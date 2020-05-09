@@ -139,6 +139,12 @@ public static void switchFrameByWebElement(WebElement frameElement)
      }
 
      
+   //To tackle click intercepted issue
+     public static void scrollToClickElement(WebElement elementName) {
+    	 JavascriptExecutor jse = (JavascriptExecutor)driver;
+ 		jse.executeScript("var elem=arguments[0]; setTimeout(function() {elem.click();}, 100)", elementName);
+     }
+     
      // Click any element
      public static void onClick(WebElement element)
  	 {
