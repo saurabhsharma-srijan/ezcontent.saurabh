@@ -1,7 +1,6 @@
 package ezcontent.qa.pages;
 
 import java.util.List;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -131,7 +130,7 @@ public class ArticleGalleryCarouselPage extends TestBase {
 		TestUtil.switchFrameByWebElement(iframeElement);
 		checkImage1.click();
 		uploadImages.click();
-		Wait.visibiltyOfElement(driver, 5, mediaMessage);
+		Wait.visibiltyOfElement(5, mediaMessage);
 		String imgMediamessage = mediaMessage.getText();
 
 // Content section:
@@ -139,9 +138,9 @@ public class ArticleGalleryCarouselPage extends TestBase {
 		galleryCarouselName.clear();
 		galleryCarouselName.sendKeys(prop.getProperty("galleryCarouselname"));
 		TestUtil.viewportWebElement(galleryCarouselName);
-		Wait.elementClickable(driver, 5, selectImageContent);
+		Wait.elementClickable(5, selectImageContent);
 		selectImageContent.click();
-		Wait.visibiltyOfElement(driver, 5, iframeElement);
+		Wait.visibiltyOfElement(5, iframeElement);
 		TestUtil.switchFrameByWebElement(iframeElement);
 		TestUtil.viewportWebElement(checkImage7);
 		checkImage6.click();
@@ -163,7 +162,7 @@ public class ArticleGalleryCarouselPage extends TestBase {
 		Select oSelect = new Select(saveAs);
 		oSelect.selectByVisibleText("Published");
 		Wait.Pause(10000);
-		Wait.elementClickable(driver, 5, saveButton);
+		Wait.elementClickable(5, saveButton);
 		saveButton.click();
 	}
 
@@ -195,7 +194,7 @@ public class ArticleGalleryCarouselPage extends TestBase {
 	}
 
 	public boolean validateGalleryCarouselNameField() {
-		Wait.visibiltyOfElement(driver, 8, galleryCarouselName);
+		Wait.visibiltyOfElement(8, galleryCarouselName);
 		return galleryCarouselName.isDisplayed();
 	}
 
@@ -206,10 +205,10 @@ public class ArticleGalleryCarouselPage extends TestBase {
 	public void collapseThenEditGC() {
 		galleryCarouselName.sendKeys("testing text 123");
 		collapse.click();
-		Wait.visibiltyOfElement(driver, 8, edit);
+		Wait.visibiltyOfElement(8, edit);
 		if (edit.isDisplayed()) {
 			edit.click();
-	}	Wait.visibiltyOfElement(driver, 8, galleryCarouselName); 
+	}	Wait.visibiltyOfElement(8, galleryCarouselName); 
 		galleryCarouselName.sendKeys("testing text 321");
 	}
 	
@@ -219,10 +218,9 @@ public class ArticleGalleryCarouselPage extends TestBase {
 		remove.isDisplayed();
 		duplicate.isDisplayed();		
 		duplicate.click();
-	//	TestUtil.scrollDownByPixel(5);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
-        Wait.visibiltyOfElement(driver, 8, toggleButton2);
+        Wait.visibiltyOfElement(8, toggleButton2);
 		toggleButton2.click();
 		remove2.isDisplayed();
 		remove2.click();			

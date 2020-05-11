@@ -23,7 +23,7 @@ public class ArticleGalleryCarouselPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();
+		TestBase.browserLaunch();
 		loginPage = new LoginPage();
 		Wait.implicitWait(3000);
 		loginPage.validateLogin();

@@ -1,6 +1,5 @@
 package ezcontent.qa.testcases;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -8,7 +7,6 @@ import org.testng.annotations.Test;
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.ForgetPasswordPage;
 import ezcontent.qa.pages.LoginPage;
-import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 
 public class ForgetPasswordPageTest extends TestBase {
@@ -22,10 +20,12 @@ public class ForgetPasswordPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization(); // to launch browser and get url
+
+		TestBase.browserLaunch(); // to launch browser and get url
+
 
 		loginpage = new LoginPage();
-		loginpage.forgetPaswd();       // click on forget password link
+		loginpage.forgetPassword();       // click on forget password link
 
 		forgetPswdPage = new ForgetPasswordPage(); 
 	}
@@ -46,7 +46,7 @@ public class ForgetPasswordPageTest extends TestBase {
 
 	@Test(priority = 3)
 	public void forgetPaswdSubmitTest() throws InterruptedException {
-		forgetPswdPage.submitForgetPaswd(prop.getProperty("username"));
+		forgetPswdPage.submitForgetPaswd(prop.getProperty("Admin"));
 		Wait.Pause(5000);
 	}
 
@@ -59,6 +59,6 @@ public class ForgetPasswordPageTest extends TestBase {
 
 	@AfterClass
 	public void closeBrowser() {
-		TestBase.browserQuit();
+		browserQuit();
 	}
 }

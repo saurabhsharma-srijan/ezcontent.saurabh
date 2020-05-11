@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="ezcontent.qa.testcases.ArticleFAQTest">
+        <methods>
+          <include name="contentFunctionalitiesTest"/>
+          <include name="uploadThumbnailImageTest"/>
+          <include name="closeBrowser"/>
+          <include name="enterTaxonomyTest"/>
+          <include name="enterTeaserDetailTest"/>
+          <include name="enterBasicDetailsTest"/>
+          <include name="loginFunctionality"/>
+          <include name="enterContentDetailsTest"/>
+          <include name="reachToArticlePageTest"/>
+          <include name="validateTabTitleTest"/>
+          <include name="setup"/>
+          <include name="validateHeaderTitleTest"/>
+        </methods>
+      </class> <!-- ezcontent.qa.testcases.ArticleFAQTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -22,7 +22,7 @@ public class ArticleQuotePageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();
+		TestBase.browserLaunch();
 		loginPage = new LoginPage();
 		loginPage.validateLogin();
 		articleQuotePage = new ArticleQuotePage();

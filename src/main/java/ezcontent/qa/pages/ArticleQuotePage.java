@@ -161,7 +161,7 @@ public class ArticleQuotePage extends TestBase {
 		TestUtil.switchFrameByWebElement(iframeElement);
 		checkImage1.click();
 		uploadImages.click();
-		Wait.visibiltyOfElement(driver, 5, mediaMessage);
+		Wait.visibiltyOfElement(5, mediaMessage);
 		String imgMediamessage = mediaMessage.getText();
 
 // Content section:
@@ -187,7 +187,7 @@ public class ArticleQuotePage extends TestBase {
 	}
 
 	public String NewArticleTitle() {
-		Wait.visibiltyOfElement(driver, 10, newArticleTitle);
+		Wait.visibiltyOfElement(10, newArticleTitle);
 		return newArticleTitle.getText();
 	}
 
@@ -249,7 +249,7 @@ public class ArticleQuotePage extends TestBase {
 	 }     
 
 	public boolean validateQuoteNameField() {		 
-		 Wait.visibiltyOfElement(driver, 8, quoteName);
+		 Wait.visibiltyOfElement(8, quoteName);
 		 return quoteName.isDisplayed();	 
 	}  
 
@@ -260,10 +260,10 @@ public class ArticleQuotePage extends TestBase {
 	public void collapseThenEdit() {
 		quoteName.sendKeys("testing text 123");
 		collapse.click();
-		Wait.visibiltyOfElement(driver, 8, edit);
+		Wait.visibiltyOfElement(8, edit);
 		if (edit.isDisplayed()) {
 			edit.click();			
-		} Wait.visibiltyOfElement(driver, 8, collapse);
+		} Wait.visibiltyOfElement(8, collapse);
 		  collapse.isDisplayed();
 	}
 
@@ -280,7 +280,7 @@ public class ArticleQuotePage extends TestBase {
 		remove.isDisplayed();
 		duplicate.isDisplayed();	
 		duplicate.click();
-	    Wait.visibiltyOfElement(driver, 8, toggleButton2);
+	    Wait.visibiltyOfElement(8, toggleButton2);
 		toggleButton2.click();
 		remove2.isDisplayed();
 		remove2.click();			

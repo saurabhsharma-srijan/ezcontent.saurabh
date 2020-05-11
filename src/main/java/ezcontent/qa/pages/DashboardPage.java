@@ -47,10 +47,10 @@ public class DashboardPage extends TestBase {
 
 	public void clickArticleLink() {
 		Actions actions = new Actions(driver);
-		Wait.visibiltyOfElement(driver, 20, content);
+		Wait.visibiltyOfElement(10, content);
 		actions.moveToElement(content).perform();
 		actions.moveToElement(addContent).perform();
-		Wait.visibiltyOfElement(driver, 5, article);
+		Wait.visibiltyOfElement(5, article);
 		article.click();
 	}
 

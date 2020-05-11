@@ -17,7 +17,7 @@ public class DashboardPageTest extends TestBase {
 
 	@BeforeClass
 	public void setup() {
-		TestBase.initialization();
+		TestBase.browserLaunch();
 		loginPage = new LoginPage();			
 		loginPage.validateLogin();
 		dashboardPage = new DashboardPage();
