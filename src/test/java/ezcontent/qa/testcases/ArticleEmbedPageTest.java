@@ -13,13 +13,11 @@ import ezcontent.qa.pages.ArticleEmbedPage;
 import ezcontent.qa.pages.LoginPage;
 
 
-public class ArticleEmbedPageTest {
-
-	public class ArticleEmbedTest extends TestBase {
+public class ArticleEmbedPageTest extends TestBase {
 		ArticleEmbedPage embed;
 		LoginPage page;
 		
-		public ArticleEmbedTest() throws IOException {
+		public ArticleEmbedPageTest() throws IOException {
 			super();
 			
 		}
@@ -29,19 +27,20 @@ public class ArticleEmbedPageTest {
 		{
 			browserLaunch();
 			embed = new ArticleEmbedPage();
-		}
-		
-		@Test(priority = 1)
-		public void validateMenu() throws IOException
-		{
 			page = new LoginPage();
 			page.validateLogin(prop.getProperty("Admin"),prop.getProperty("Adminpass"));
+		}
+		
+		@Test(priority = 0)
+		public void validateMenu() throws IOException
+		{
+			
 			Boolean menuResult = embed.validateMenu();
 			Assert.assertTrue(menuResult, "Content is not displayed");
 		 	
 		}
 		
-		@Test(priority = 2)
+		@Test(priority = 1)
 		public void validateAddContent()
 		{
 			Boolean contentResult = embed.validateAddContent();
@@ -49,14 +48,14 @@ public class ArticleEmbedPageTest {
 			
 		}
 		
-		@Test(priority = 3)
+		@Test(priority = 2)
 		public void validateContentType()
 		{
 			Boolean contentType = embed.validateContentType();
 			Assert.assertTrue(contentType, "Article content type is not displayed");
 		}
 		
-		@Test(priority = 4)
+		@Test(priority = 3)
 		public void validateRedirectionToArticlePage()
 		{
 			String pageHeading = embed.verifyRedirectionToArticlePage();
@@ -64,7 +63,7 @@ public class ArticleEmbedPageTest {
 			
 		}
 		
-		@Test(priority = 5)
+		@Test(priority = 4)
 		public void validateSubSections()
 		{
 			List<String> list = embed.verifySubSections();
@@ -114,8 +113,8 @@ public class ArticleEmbedPageTest {
 		@Test(priority = 12)
 		public void selectParagraphFromContent()
 		{
-			String labelContentActual = embed.verifyAddParagraph();
-			Assert.assertEquals(labelContentActual, prop.getProperty("labelContentExpected"));
+			embed.verifyAddParagraph();
+		    embed.selectParagraph();
 		}
 		
 		@Test(priority = 13)
@@ -131,13 +130,31 @@ public class ArticleEmbedPageTest {
 			Assert.assertEquals(labelRealActual, prop.getProperty("labelRealExpected"));
 		}
 		
-		@Test(priority =15 , dependsOnMethods = {"validateTitleField" ,"selectParagraphFromContent" })
+		@Test(priority =16 , dependsOnMethods = {"validateTitleField" ,"selectParagraphFromContent" })
 		public void validatesaveasPublished()
 		{
 			Boolean statusMessage = embed.saveasPublished();
 			Assert.assertTrue(statusMessage);
 		}
 				
+		@Test(priority = 15) 
+		public void validateRightMenus() {
+			Boolean Flag = embed.verifyMenuSettings();
+			Assert.assertTrue(Flag , "Menu Settings is not displayed");
+			Boolean Flag1 = embed.verifymetaTags();
+			Assert.assertTrue(Flag1 , "Meta Tags is not displayed" );
+			Boolean Flag2 = embed.verifysitemap();
+			Assert.assertTrue(Flag2 , "Simple XML SiteMap is not displayed");
+			Boolean Flag3 =  embed.verifyschedulingOptions();
+			Assert.assertTrue(Flag3 , "Scheduling Options is not displayed");
+			Boolean Flag4 = embed.verifyalias();
+			Assert.assertTrue(Flag4 , "URL alias is not displayed");
+			Boolean Flag5 = embed.verifyauthoringInformation();
+			Assert.assertTrue(Flag5 , "Authoring Information is not displayed");
+		    Boolean Flag6 = embed.verifypromotionOption();
+			Assert.assertTrue(Flag6 , "Promotion Options is not displayed");
+					
+		}
 		@AfterClass
 		public void closeBrowser()
 		{
@@ -145,4 +162,4 @@ public class ArticleEmbedPageTest {
 		}
 	}
 
-}
+

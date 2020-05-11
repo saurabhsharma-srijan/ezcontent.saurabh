@@ -66,9 +66,6 @@ public class ArticleEmbedPage extends TestBase{
 		@FindBy(xpath = "//input[@id = 'edit-field-thumbnail-entity-browser-entity-browser-open-modal']")
 		WebElement selectImageButton;
 		
-		@FindBy(id = "edit-field-content-add-more-add-modal-form-area-add-more")
-		WebElement addParaghraph;
-		
 		@FindBy(id = "entity_browser_iframe_image_browser")
 		WebElement iframeImage;
 		
@@ -123,6 +120,31 @@ public class ArticleEmbedPage extends TestBase{
 		@FindBy(xpath = "//div[@aria-label = 'Status message']")
 		WebElement statusMessage;
 		
+		@FindBy(xpath = "//details[@id = 'edit-menu']/summary")
+		WebElement menuSettings;
+		
+		@FindBy(xpath = "//details[@id = 'edit-field-meta-tags-0']/summary")
+		WebElement metaTags;
+		
+		@FindBy(xpath = "//details[@id = 'edit-simple-sitemap']/summary")
+		WebElement sitemap;
+		
+		@FindBy(xpath = "//details[@id = 'edit-scheduler-settings']/summary")
+		WebElement schedulingOptions;
+		
+		@FindBy(xpath = "//details[@id = 'edit-path-0']/summary")
+		WebElement alias;
+		
+		@FindBy(xpath = "//details[@id = 'edit-author']/summary")
+		WebElement authoringInformation;
+		
+		@FindBy(xpath = "//details[@id = 'edit-options']/summary")
+		WebElement promotionOption;
+		
+		@FindBy(xpath = "//div[@id = 'edit-advanced']/details/summary")
+		List<WebElement> menus;
+		
+		
 		public ArticleEmbedPage() throws IOException{
 			
 			PageFactory.initElements(driver, this);
@@ -166,7 +188,7 @@ public class ArticleEmbedPage extends TestBase{
 		public void verifyTitleField()
 		{
 			if (title.isDisplayed())
-				titleField.sendKeys("Title Article Embed");
+				titleField.sendKeys("Title Article ");
 			else
 				System.out.println("Title Field is not present");
 			
@@ -174,13 +196,13 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public boolean verifyShortTitle()
 		{
-			shortTitleField.sendKeys("Embed Article short title");
+			shortTitleField.sendKeys("Article short title");
 			return shortTitle.isDisplayed();
 		}
 		
 		public String verifysubhead()
 		{
-			subHeadField.sendKeys("Embed Article subhead");
+			subHeadField.sendKeys("Article subhead");
 			return subHead.getText();
 			
 		}
@@ -202,7 +224,7 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public String verifySummaryField()
 		{
-			summaryField.sendKeys("Article Embed Summary");
+			summaryField.sendKeys("Article Summary");
 			return Summary.getText();
 		}
 		
@@ -218,10 +240,12 @@ public class ArticleEmbedPage extends TestBase{
 					
 		}
         
-		public String verifyAddParagraph()
+		public void verifyAddParagraph()
 		{
 	
 			TestUtil.scroll(0, 400);
+			if(content.isDisplayed())
+			{
 			TestUtil.onClick(paragraphButton);
 			 try {
 				Wait.Pause(5000);
@@ -229,17 +253,21 @@ public class ArticleEmbedPage extends TestBase{
 				
 				e.printStackTrace();
 			}
+			}
+		}
+		
+		public void selectParagraph() {
+			
 			TestUtil.onClick(selectEmbed);
 		   Wait.visibiltyOfElement(10, textBox);
 		    if(Script.getText().equalsIgnoreCase("script"))
 		    {
-		      textBox.sendKeys("Embed Article");
+		      textBox.sendKeys("Article");
 		    }
 		    else 
 		    	System.out.println("Script text area is not visible");
-			return content.getText();
 			
-			
+				
 		}
 		
 		public void verifyTaxonomyField()
@@ -271,8 +299,42 @@ public class ArticleEmbedPage extends TestBase{
 		{
 			TestUtil.selectByValue(saveAs, "published");
 			TestUtil.onClick(saveButton);
-			return statusMessage.isDisplayed();
-			
+			return statusMessage.isDisplayed();			
+		}
+		
+		public boolean verifyMenuSettings() {
+			 TestUtil.mouseClick(menuSettings);
+			 return menuSettings.isDisplayed();
+		}
+		
+		public boolean verifymetaTags() {
+			TestUtil.mouseClick(metaTags);
+			return metaTags.isDisplayed();
+		}
+		
+		public boolean verifysitemap() {
+			TestUtil.mouseClick(sitemap);
+			return sitemap.isDisplayed();
+		}
+		
+		public boolean verifyschedulingOptions() {
+			TestUtil.mouseClick(schedulingOptions);
+			return schedulingOptions.isDisplayed();
+		}
+		
+		public boolean verifyalias() {
+			TestUtil.mouseClick(alias);
+			return alias.isDisplayed();
+		}
+		
+		public boolean verifyauthoringInformation() { 
+			TestUtil.mouseClick(authoringInformation);
+			return authoringInformation.isDisplayed();
+		}
+		
+		public boolean verifypromotionOption() {
+			TestUtil.mouseClick(promotionOption);
+			return promotionOption.isDisplayed();
 		}
 		
 		
