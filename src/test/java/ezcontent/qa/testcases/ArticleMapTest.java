@@ -49,7 +49,7 @@ public class ArticleMapTest extends TestBase{
 	public void verifyContent() {
 		
 	String contentTitle= articlemapPage.contentHeading();
-	Assert.assertEquals(contentTitle,prop.getProperty("contentHeading"));
+	Assert.assertEquals(contentTitle,prop.getProperty("labelContentExpected"));
 	
 	}
 	
@@ -120,13 +120,13 @@ public class ArticleMapTest extends TestBase{
 	@Test(priority=11)
 	public void summaryField(){
 		String SummaryLabel = articlemapPage.enterSummaryFieldData();
-		Assert.assertEquals(SummaryLabel, prop.getProperty("labelSummary"));
+		Assert.assertEquals(SummaryLabel, prop.getProperty("labelSummaryExpected"));
 	}
 	
 	@Test(priority = 12)
 	public void thumbnailFieldLabel(){
 		String thumbnail = articlemapPage.thumbnailLabel();
-		Assert.assertEquals(thumbnail, prop.getProperty("labelThumbnail"));
+		Assert.assertEquals(thumbnail, prop.getProperty("labelThumbnailExpected"));
 	}
 	
 	

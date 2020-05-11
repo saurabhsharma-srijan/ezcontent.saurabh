@@ -1,17 +1,20 @@
 package ezcontent.qa.base;
 
+
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import ezcontent.qa.util.Wait;
 import java.io.File;
 import java.io.FileInputStream;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -52,8 +55,7 @@ public class TestBase {
 
 			
 			driver = new ChromeDriver();
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+           
 //
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			//chromeOptions.addArguments("headless");
@@ -91,7 +93,7 @@ public class TestBase {
 	}
 
 	public static void browserQuit() {
-		driver.manage().deleteAllCookies();
+	
 		driver.quit();
 	}
 
