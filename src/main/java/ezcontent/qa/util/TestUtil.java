@@ -1,9 +1,11 @@
 package ezcontent.qa.util;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
@@ -11,53 +13,43 @@ public class TestUtil extends TestBase {
 //	public static long PageLoadTimeout = 20;
 //	public static long ImplicitWait = 10;
 
-	
-	public void navigateToURL(String URL) {
-		System.out.println("Navigating to: " + URL);
-	}	
-	
-	
 	// Switch by Index
-
-	public void switchFrameByIndex() {
-		driver.switchTo().frame("indexValue");
+	public static void switchFrameByIndex(int index) {
+		driver.switchTo().frame(index);
 	}
 
-//Switch by frame name
-	public void switchFrameByName() {
-		driver.switchTo().frame("frameName");
-	}
-
-	// Switch by frame ID
-	public void switchFrameById() {
-		driver.switchTo().frame("frameId");
+//Switch by frame name or Id
+	public static void switchFrameByNameOrId(String NameOrId) {
+		driver.switchTo().frame("String NameOrId");
 	}
 
 //Switch by frame WebElement
-	public void switchFrameByWebElement() {
-		driver.switchTo().frame("iframeElement");
+	public static void switchFrameByWebElement(WebElement iframeElement) {
+		driver.switchTo().frame(iframeElement);
 	}
 
 //Switch back to the main window from iframe
-	public void switchBackToWindow() {
+	public static void switchBackToWindow() {
 		driver.switchTo().defaultContent();
 	}
 
-	// switch to simple alert
-	public void switchToSimpleAlert() {
-	Alert simpleAlert = driver.switchTo().alert();
-	 String alertText = simpleAlert.getText();
-	 System.out.println("Alert text is " + alertText);
-	 simpleAlert.accept();
-	 }
-	 
-     public void clearField(WebElement element) {
-         try {
-             element.clear();
-         } catch (Exception e) {
-             System.out.print(String.format("The following element could not be cleared: [%s]", element.getText()));
-         }
-     }
+// Select ByVisibleText method
+	public static void selectByVisibleText(WebElement element, String visibleText) {
+		Select oSelect = new Select(element);
+		oSelect.selectByVisibleText("visibleText");
+
+	}
+
+// To scroll page or viewport the Webelement
+	public static void viewportWebElement(WebElement element) {
+		JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+		jse2.executeScript("arguments[0].scrollIntoView()", element);
+	}
+
+// To scroll down the page by pixel
+	public static void scrollDownByPixel(int pixel) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,pixel)");
+	}
 
 }
-
