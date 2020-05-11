@@ -37,7 +37,7 @@ public class ContentLiveBlogTest extends TestBase {
  	    @Test(priority=2)
  	    public void navigatetoContentLiveBlogPage() {
  	    String content	= contentliveblogPage.contentHeading();
- 	    Assert.assertEquals(content, prop.getProperty("contentHeading"));
+ 	    Assert.assertEquals(content, prop.getProperty("labelContentExpected"));
  	    String addContent = contentliveblogPage.mousehoverOnContent();
  	    Assert.assertEquals(addContent, prop.getProperty("addContentHeading"));
  	    boolean liveBlog = contentliveblogPage.mousehoverOnAddContent();
