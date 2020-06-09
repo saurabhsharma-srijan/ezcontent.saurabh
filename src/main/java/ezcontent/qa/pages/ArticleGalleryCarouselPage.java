@@ -114,7 +114,7 @@ public class ArticleGalleryCarouselPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void createArticleGalleryCarousel() throws InterruptedException {
+	public void createArticleGalleryCarousel() {
 
 // Base section: 
 		title.sendKeys(prop.getProperty("articleTitleGalleryCarousel"));
@@ -161,7 +161,6 @@ public class ArticleGalleryCarouselPage extends TestBase {
 //select save as published:
 		Select oSelect = new Select(saveAs);
 		oSelect.selectByVisibleText("Published");
-		Wait.Pause(10000);
 		Wait.elementClickable(5, saveButton);
 		saveButton.click();
 	}

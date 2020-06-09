@@ -1,17 +1,25 @@
 package ezcontent.qa.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
+
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.pages.ArticleQuotePage;
 import ezcontent.qa.pages.DashboardPage;
 import ezcontent.qa.pages.LoginPage;
+import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 import ezcontent.qa.base.TestBase;
 
 public class ArticleQuotePageTest extends TestBase {
+	private static final Logger LOG = Logger.getLogger(ArticleQuotePageTest.class);
 	LoginPage loginPage;
 	DashboardPage dashboardPage;
 	ArticleQuotePage articleQuotePage;
@@ -161,11 +169,17 @@ public class ArticleQuotePageTest extends TestBase {
 		Assert.assertTrue(flag9);
 		System.out.println("Validated SaveAs Field");
 	}
-
 	
 	@Test(priority = 10)
-	public void createArticleQuotePage() {
-		articleQuotePage.createArticleQuote();
+	public void createArticleQuotePage() {		
+		try {
+			articleQuotePage.createArticleQuote();
+		}
+		catch (Exception e) {
+			Assert.fail(e.getMessage());
+			e.printStackTrace();
+			LOG.info(e);			
+		}	
 	}
 
 	@Test(priority = 11)
@@ -173,6 +187,24 @@ public class ArticleQuotePageTest extends TestBase {
 		String newArticleTitle = articleQuotePage.NewArticleTitle();
 		Assert.assertEquals(newArticleTitle, prop.getProperty("articleTitleQuote"));
 		System.out.println("New article title is :" + newArticleTitle);
+	}
+	
+	@Test(priority = 12)
+	public void deleteArticle() {
+		try { articleQuotePage.deleteArticle();
+		}
+		catch (Exception e) {
+			Assert.fail(e.getMessage());
+			e.printStackTrace();
+			LOG.info(e);			
+		}				
+		}
+
+	@AfterMethod
+	public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
+		if (testResult.getStatus() == ITestResult.FAILURE) {
+			TestUtil.captureScreenshot();
+		}
 	}
 		
 	@AfterClass

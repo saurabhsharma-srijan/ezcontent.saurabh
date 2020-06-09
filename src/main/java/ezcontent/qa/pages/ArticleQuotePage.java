@@ -115,6 +115,12 @@ public class ArticleQuotePage extends TestBase {
 	WebElement saveButton;
 	@FindBy(xpath = "//h1[@class='js-quickedit-page-title title']")
 	WebElement newArticleTitle;
+	@FindBy(xpath = "//ul[@class='nav nav-tabs primary']/li[3]/a")
+	WebElement deleteLink;
+	@FindBy(xpath = "//input[@value='Delete']")
+	WebElement deleteSubmit;
+	@FindBy(xpath = "//div[@class='alert alert-dismissible fade show col-12 alert-success']")
+	WebElement deleteStatusMessage;
 
 // RHS section fields objects
 	
@@ -181,8 +187,9 @@ public class ArticleQuotePage extends TestBase {
 		seoFocusKeyword.sendKeys(prop.getProperty("focusKeyword"));
 
 //select save as published:
+	//	TestUtil.selectByVisibleText(saveAs, "Published");
 		Select oSelect = new Select(saveAs);
-		oSelect.selectByVisibleText("Published");
+		oSelect.selectByVisibleText("Published");		
 		saveButton.click();
 	}
 
@@ -191,6 +198,14 @@ public class ArticleQuotePage extends TestBase {
 		return newArticleTitle.getText();
 	}
 
+	public void deleteArticle() {
+		deleteLink.click();
+		Wait.visibiltyOfElement(10, deleteSubmit);
+		deleteSubmit.click();
+		deleteStatusMessage.isDisplayed();
+		System.out.println(deleteStatusMessage.getText());
+	}
+	
 // methods to validating the input fields on Create-Article page:
 	public boolean validateTitleField() {
 		return title.isDisplayed();

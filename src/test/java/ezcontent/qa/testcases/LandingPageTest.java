@@ -8,9 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import ezcontent.qa.base.TestBase;
-
 import ezcontent.qa.pages.LandingPage;
 import ezcontent.qa.pages.LoginPage;
 import ezcontent.qa.util.TestUtil;
@@ -27,14 +25,9 @@ public class LandingPageTest extends TestBase {
 	@BeforeClass
 	public void setup() {
 		TestBase.browserLaunch(); // to launch browser and get url
-
-		loginpage = new LoginPage();
-		
-		landingpage = new LandingPage();
-		 
-		loginpage.validateLogin();
-		
-		
+		loginpage = new LoginPage();		
+		landingpage = new LandingPage();		 
+		loginpage.validateLogin();		
 	}
 	
 	@Test(priority=0)
@@ -83,10 +76,7 @@ public class LandingPageTest extends TestBase {
 	
 	@Test(priority=6)
 	public void EnterBody() throws InterruptedException  {
-		landingpage.enterInBodyField("Test body summary");
-		
-	
-		
+		landingpage.enterInBodyField("Test body summary");		
 	}
 	
 	@Test(priority = 7)
@@ -94,14 +84,12 @@ public class LandingPageTest extends TestBase {
 		String statusMessage = landingpage.clickOnSave();
 		Assert.assertEquals(statusMessage, "×\n" + 
 				"Status message\n" + 
-				"Landing page Test Landing title 121 has been created.");
-		
+				"Landing page Test Landing title 121 has been created.");		
 	}
 	
 	@Test(priority = 8)
 	public void closeStatusMsg() {
-		landingpage.closeStatusMsg();
-		
+		landingpage.closeStatusMsg();		
 	}
 	
 	@Test(priority = 9)
@@ -147,17 +135,16 @@ public class LandingPageTest extends TestBase {
 		landingpage.fourthSection();
 	}
 	
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void fifthBlockConfiguration() throws InterruptedException {
 		landingpage.fifthSection();
 	}
 	
-	@Test(priority = 15)
+	@Test(priority = 17)
 	public void sixthBlockConfiguration() throws InterruptedException {
 		landingpage.sixthSection();
 	}
 	
-
 	@AfterMethod
 	public void takeScreenShotOnFailure(ITestResult testResult) throws IOException { 
 	    if (testResult.getStatus() == ITestResult.FAILURE) { 

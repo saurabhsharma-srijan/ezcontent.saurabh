@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import ezcontent.qa.util.Wait;
@@ -18,12 +19,13 @@ public class TestBase {
 	public static Properties prop;
 
 	static String currentDir = System.getProperty("user.dir");
+	
 	String configFilePath = currentDir+File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator
 			+"ezcontent"+File.separator+"qa"+File.separator+"config"+File.separator+"config.properties";
 	
 	static String chromeDriverPath = currentDir+File.separator+"driver"+File.separator+"chromedriver.exe" ;
 	static String fireFoxDriverPath = currentDir+File.separator+"driver"+File.separator+"geckodriver.exe" ;
-	
+	public static String imagepath1 = currentDir+File.separator+"testImages"+File.separator+"testimg01.jpg" ;
 
 	public TestBase() {
 		try {
@@ -45,14 +47,14 @@ public class TestBase {
 			driver = new ChromeDriver(); 
 			}         
 
-        //ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("headless");
-       //driver = new ChromeDriver(chromeOptions);
+       /* ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("headless");
+        driver = new ChromeDriver(chromeOptions);*/		
 
 			//ChromeOptions chromeOptions = new ChromeOptions();
-			//System.setProperty("webdriver.chrome.driver",chromeDriverPath);
-			
+			//System.setProperty("webdriver.chrome.driver",chromeDriverPath);			
            //WebDriverManager.chromedriver().version("81.0.4044.69").setup();
+		
            //ChromeOptions chromeOptions = new ChromeOptions();
 		   //chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		  //driver = new ChromeDriver(chromeOptions);
@@ -67,11 +69,11 @@ public class TestBase {
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();			
 		}
-
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(prop.getProperty("devurl"));
-		Wait.pageLoad(20);
+		Wait.pageLoad(25);
 	}
 
 	public static void browserQuit() {	

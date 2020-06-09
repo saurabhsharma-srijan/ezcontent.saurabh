@@ -34,11 +34,9 @@ public class ArticleEmbedPageTest extends TestBase {
 		@Test(priority = 0)
 		public void validateMenu() throws IOException
 		{
-			
 			Boolean menuResult = embed.validateMenu();
 			Assert.assertTrue(menuResult, "Content is not displayed");
-		 	
-		}
+		 }
 		
 		@Test(priority = 1)
 		public void validateAddContent()

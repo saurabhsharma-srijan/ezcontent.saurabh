@@ -85,14 +85,6 @@ public class LoginPageTest extends TestBase {
 		System.out.println("click on forget password link");	
 		}
 	*/
-		
-	
-	@AfterMethod
-	public void takeScreenShotOnFailure(ITestResult testResult) throws IOException { 
-	    if (testResult.getStatus() == ITestResult.FAILURE) { 
-	        TestUtil.captureScreenshot();
-	    } 
-	}
 
 	@Test(priority = 8)
 	public void dashboardPageTitle() throws InterruptedException {

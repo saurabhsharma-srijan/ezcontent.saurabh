@@ -1,6 +1,7 @@
 package ezcontent.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ezcontent.qa.base.TestBase;
@@ -47,4 +48,10 @@ public class DashboardPageTest extends TestBase {
 		dashboardPage.logout();
 	}
 
+	@AfterClass
+	public void closeBrowser() {
+		TestBase.browserQuit();
+	}
+	
+	
 }

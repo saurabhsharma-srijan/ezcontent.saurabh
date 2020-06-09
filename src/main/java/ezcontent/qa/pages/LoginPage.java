@@ -71,7 +71,6 @@ public class LoginPage extends TestBase {
 		Wait.pageLoad(25);
 	}
 
-
 	public void forgetPassword() {
 		forgetPassword.click();
 

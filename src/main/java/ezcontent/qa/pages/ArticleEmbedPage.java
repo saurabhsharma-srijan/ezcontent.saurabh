@@ -188,7 +188,7 @@ public class ArticleEmbedPage extends TestBase{
 		public void verifyTitleField()
 		{
 			if (title.isDisplayed())
-				titleField.sendKeys("Title Article ");
+				titleField.sendKeys("Title Article 123");
 			else
 				System.out.println("Title Field is not present");
 			
@@ -196,7 +196,7 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public boolean verifyShortTitle()
 		{
-			shortTitleField.sendKeys("Article short title");
+			shortTitleField.sendKeys("Article short title 11");
 			return shortTitle.isDisplayed();
 		}
 		
@@ -224,13 +224,13 @@ public class ArticleEmbedPage extends TestBase{
 		
 		public String verifySummaryField()
 		{
-			summaryField.sendKeys("Article Summary");
+			summaryField.sendKeys("Article Summary text123");
 			return Summary.getText();
 		}
 		
 		public String selectImageFromThumbnail()
 		{
-			TestUtil.scroll(0, 500);
+		//	TestUtil.scroll(0, 500);
 			TestUtil.mouseClick(selectImageButton);
             Wait.visibiltyOfElement(4, iframeImage);
 			TestUtil.switchFrameByWebElement(iframeImage);

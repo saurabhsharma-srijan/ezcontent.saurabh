@@ -124,8 +124,7 @@ public class ArticleGalleryTest extends TestBase {
 		Boolean Flag5 = Gallery.verifyauthoringInformation();
 		Assert.assertTrue(Flag5 , "Authoring Information is not displayed");
 	    Boolean Flag6 = Gallery.verifypromotionOption();
-		Assert.assertTrue(Flag6 , "Promotion Options is not displayed");
-				
+		Assert.assertTrue(Flag6 , "Promotion Options is not displayed");			
 	}
 	
 	@AfterClass
@@ -133,8 +132,6 @@ public class ArticleGalleryTest extends TestBase {
 	{
 		browserQuit();
 	}
-	
-	
 	
 	}
 

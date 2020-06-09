@@ -1,7 +1,5 @@
 package ezcontent.qa.pages;
 
-
-
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,7 +14,6 @@ import org.openqa.selenium.support.ui.Select;
 import ezcontent.qa.base.TestBase;
 import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
-
 
 public class LandingPage extends TestBase {
 	
@@ -49,8 +46,7 @@ public class LandingPage extends TestBase {
 	
 	@FindBy(xpath="//label[text()='Body']")
 	WebElement bodyfieldlabel;
-	
-	
+		
 	@FindBy(id="edit-submit")
 	WebElement savebtn;
 	
@@ -225,14 +221,10 @@ public class LandingPage extends TestBase {
 		}
 	
 	
-	public void redirectiontolandingpage() {
-		
-		
+	public void redirectiontolandingpage() {		
 		TestUtil.mouseHover(content);
 		TestUtil.mouseHover(addcontent);
-		landingPageContent.click();
-		
-		
+		landingPageContent.click();				
 	}
 	
 	public String getLoginPageTitle() {
@@ -242,7 +234,6 @@ public class LandingPage extends TestBase {
 	public void enterInTitleField(String t) {
 		Wait.pageLoad(20);
 		titlefield.sendKeys(t);
-		
 		
 	}
 	
@@ -276,9 +267,7 @@ public class LandingPage extends TestBase {
 		cross.click();
 	}
 	
-	public String clickOnLayout() {
-		
-		
+	public String clickOnLayout() {		
 		layout.click();
 		addSection.click();
 		return layoutStatusMsg.getText();
@@ -293,11 +282,8 @@ public class LandingPage extends TestBase {
         for (WebElement element: li_All) {
         	if(element.getText().equalsIgnoreCase(column)) {
         		element.click();
-        		break;
-        		
-        		
-        	}
-        	
+        		break;        		
+        	}        	
         }
         	
         sectionName.sendKeys(sName);
@@ -306,9 +292,7 @@ public class LandingPage extends TestBase {
 	
 		public void addFirstBlockInLayout() {
 
-			TestUtil.jsExecuterClick(addBlock);
-			
-	
+		TestUtil.jsExecuterClick(addBlock);		
 		}
 	
 		public void goToCustomBlock(String customBlockType) {
@@ -379,8 +363,7 @@ public class LandingPage extends TestBase {
 		
 	}
 	
-	public void reusableAddBlock() {	
-		
+	public void reusableAddBlock() {			
 		reusableLink.click();
 		adminTitle.sendKeys("This is Admin title");
 		addBlockBtn.click();	

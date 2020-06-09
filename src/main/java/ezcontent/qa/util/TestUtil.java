@@ -1,7 +1,8 @@
 package ezcontent.qa.util;
 
-
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,28 +12,38 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import ezcontent.qa.base.TestBase;
 
 public class TestUtil extends TestBase {
 	public static Select select;
 	public static Actions action;
-static String currentDirec= System.getProperty("user.dir");
+static String currentDir = System.getProperty("user.dir");
+
+public static String TESTDATA_SHEET_PATH = currentDir+File.separator+"src"+File.separator+"main"+File.separator+"java"+File.separator
++"ezcontent"+File.separator+"qa"+File.separator+"testdata"+File.separator+"EzcontentTestData.xlsx";
+
+static Workbook book;
+static Sheet sheet;
+static JavascriptExecutor js;
  
-	// Switch by Index
+	// Switch frame by Index
 	public static void switchFrameByIndex(int index) {
 		driver.switchTo().frame(index);
 	}
 
-//Switch by frame name or Id
+//Switch frame by name or Id
 	public static void switchFrameByNameOrId(String NameOrId) {
 		driver.switchTo().frame("String NameOrId");
 	}
 
-//Switch by frame WebElement
+//Switch frame by WebElement
 	public static void switchFrameByWebElement(WebElement iframeElement) {
 		driver.switchTo().frame(iframeElement);
 	}
@@ -46,7 +57,6 @@ static String currentDirec= System.getProperty("user.dir");
 	public static void selectByVisibleText(WebElement element, String visibleText) {
 		Select oSelect = new Select(element);
 		oSelect.selectByVisibleText("visibleText");
-
 	}
 
 // To scroll page or viewport the Webelement
@@ -55,30 +65,11 @@ static String currentDirec= System.getProperty("user.dir");
 		jse2.executeScript("arguments[0].scrollIntoView()", element);
 	}
 
-// To scroll down the page by pixel
-	public static void scrollDownByPixel(int pixel) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,pixel)");	
-	}
-
-
 	//Navigate to any url
 	public static void navigateToURL(String url) 
 	{
 		driver.navigate().to(url);
 	}	
-
-    //Switch by frame name
-	public static void switchFrameByName(String name)
-	{
-		driver.switchTo().frame(name);
-	}
-
-// Switch by frame ID
-public static void switchFrameById(String frameId)
-{
-	driver.switchTo().frame(frameId);
-}
 
 	// switch to simple alert
 	public static void switchToSimpleAlert() {
@@ -106,13 +97,11 @@ public static void switchFrameById(String frameId)
      public static String timeStamp() {
     	 return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
      }
-     
-   
+        
      //To capture screenshot
-     public static void captureScreenshot() {
-    	 
+     public static void captureScreenshot() {    	 
     	 File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    	 String fileWithPath = currentDirec+File.separator+"test-output"+File.separator+timeStamp()+".png"; 
+    	 String fileWithPath = currentDir+File.separator+"test-output"+File.separator+timeStamp()+".png"; 
     	 File DestFile=new File(fileWithPath); 
     	 try {
 			FileUtils.copyFile(srcFile,DestFile );
@@ -131,7 +120,6 @@ public static void switchFrameById(String frameId)
  		js.executeScript("window.scrollTo(0, 500)");
      }
 
-     
    //To tackle click intercepted issue
      public static void scrollToClickElement(WebElement elementName) {
     	 JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -166,21 +154,46 @@ public static void switchFrameById(String frameId)
  	 public static void mouseHover(WebElement element)
 	 {
 		new Actions(driver).moveToElement(element).perform();
-		
 	 }
 	
  	//mouseClick
 	public static void mouseClick(WebElement element)
     {
-		
 		new Actions(driver).click(element).perform();
 	}
 	
-	// scroll down
+	// scroll down by pixel
 	public static void scroll(int startdimension, int enddimension) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(" + String.valueOf(startdimension) + "," + String.valueOf(enddimension) + ")");
+ }
 
-	}
-
+	//get excel sheet test data
+	public static Object[][] getTestData(String sheetName) {
+		FileInputStream file = null;
+		try {
+			file = new FileInputStream(TESTDATA_SHEET_PATH);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			book = WorkbookFactory.create(file);
+		} catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		sheet = book.getSheet(sheetName);
+		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		 System.out.println(sheet.getLastRowNum() + "-----" +
+		 sheet.getRow(0).getLastCellNum());
+		for (int i = 0; i < sheet.getLastRowNum(); i++) {
+			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
+				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+			    System.out.println(data[i][k]);
+			}
+		}
+		return data;
+	    }	
+	
 }

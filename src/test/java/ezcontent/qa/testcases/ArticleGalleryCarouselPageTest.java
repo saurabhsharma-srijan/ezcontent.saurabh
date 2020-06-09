@@ -1,7 +1,11 @@
 package ezcontent.qa.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ezcontent.qa.base.TestBase;
@@ -9,6 +13,7 @@ import ezcontent.qa.pages.ArticleGalleryCarouselPage;
 import ezcontent.qa.pages.ArticleQuotePage;
 import ezcontent.qa.pages.DashboardPage;
 import ezcontent.qa.pages.LoginPage;
+import ezcontent.qa.util.TestUtil;
 import ezcontent.qa.util.Wait;
 
 public class ArticleGalleryCarouselPageTest extends TestBase {
@@ -164,7 +169,7 @@ public class ArticleGalleryCarouselPageTest extends TestBase {
 	}
 
 	@Test(priority = 10)
-	public void createArticleGalleryCarousel() throws InterruptedException {
+	public void createArticleGalleryCarousel() {
 		articleGalleryCarouselPage.createArticleGalleryCarousel();
 	}
 
@@ -174,6 +179,7 @@ public class ArticleGalleryCarouselPageTest extends TestBase {
 		Assert.assertEquals(newArticleTitle, prop.getProperty("articleTitleGalleryCarousel"));
 		System.out.println("New article title is :" + newArticleTitle);
 	}
+	
 
 	@AfterClass
 	public void closeBrowser() {
